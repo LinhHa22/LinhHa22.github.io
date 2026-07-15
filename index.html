@@ -429,10 +429,44 @@
       .hero { padding-top: 54px; }
       .hero h1 { font-size: clamp(3.15rem, 15vw, 5rem); }
       .button-row .button { width: 100%; }
-      .portrait-stage { min-height: 540px; }
-      .portrait-frame { inset-inline: 10px; }
-      .portrait-roles { bottom: 35px; left: -2px; width: 188px; padding: 14px; }
-      .portrait-card { right: -2px; bottom: 20px; min-width: 174px; padding: 15px; }
+      .portrait-stage {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+        gap: 14px;
+        min-height: 0;
+        margin-top: 26px;
+        align-items: stretch;
+      }
+      .portrait-frame {
+        position: relative;
+        grid-column: 1 / -1;
+        width: 100%;
+        aspect-ratio: 1;
+        inset: auto;
+        border-radius: 28px;
+      }
+      .portrait-frame::after { inset: 14px; border-radius: 20px; }
+      .portrait-frame img { object-position: 50% 46%; }
+      .portrait-roles {
+        position: relative;
+        grid-row: 2;
+        grid-column: 1;
+        bottom: auto;
+        left: auto;
+        width: auto;
+        padding: 16px;
+      }
+      .portrait-card {
+        position: relative;
+        grid-row: 2;
+        grid-column: 2;
+        right: auto;
+        bottom: auto;
+        min-width: 0;
+        padding: 16px;
+        align-content: center;
+      }
+      .portrait-card strong { font-size: 1.15rem; }
       .proof-grid { grid-template-columns: 1fr; }
       .proof-grid > * { min-height: 145px; border-left: 1px solid rgba(255,255,255,.13); }
       .case-copy { padding: 38px 25px; }
@@ -559,7 +593,7 @@
               <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid02YSGLeYYPkkszsp6FgRqZVCRvNy61JXsv7GMsm7rrTCVrraDssAamXdPSFmVzrnaml/" target="_blank" rel="noreferrer"><figure><img src="assets/social-04.webp" alt="ACCA and KPMG ESG event promotion post"></figure><div class="sample-caption"><span>ESG event promotion</span><b>↗</b></div></a>
               <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid02Dz7eYbtpfMRo7cPmsCWTUYRZcK1cwBKHSgf2X39Hze8BP7JGvaCqdk67YqsibN6sl/" target="_blank" rel="noreferrer"><figure><img src="assets/social-05.webp" alt="KPMG Trade and Customs insight post"></figure><div class="sample-caption"><span>Trade &amp; Customs insight</span><b>↗</b></div></a>
               <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid02sX7LopRLd4tJ2QYQDudx4DMRdWopRmuLUK4xohN16NquDwssFavi8Jmgftqx4mA1l/" target="_blank" rel="noreferrer"><figure><img src="assets/social-06.webp" alt="KPMG Audit Leaders Network event post"></figure><div class="sample-caption"><span>Audit Leaders Network event</span><b>↗</b></div></a>
-              <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid02QDEcZHrpdxqJB5LbGEbtZjN9DDQFEeQQwAKT3gLqqRKfaRBJ2q2wRW9EDSgHerCLl/" target="_blank" rel="noreferrer"><figure><img src="assets/social-07.webp" alt="KPMG Decree 182 insight post with The Business Times"></figure><div class="sample-caption"><span>Decree 182 insight</span><b>↗</b></div></a>
+              <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid02QDEcZHrpdxqJB5LbGEbtZjN9DDQFEeQQwAKT3gLqqRKfaRBJ2q2wRW9EDSgHerCLl/" target="_blank" rel="noreferrer"><figure><img src="assets/social-07.webp" alt="KPMG industry policy update post with The Business Times"></figure><div class="sample-caption"><span>Industry updates</span><b>↗</b></div></a>
               <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid0BheN7DwTpeZiUvgmAZ6Lqz7eJbUq9t9ydED3XxWGb74XiB3oBj4SKh5Lgi38d8eQl/" target="_blank" rel="noreferrer"><figure><img src="assets/social-08.webp" alt="KPMG Vietnam and Singapore partnership post"></figure><div class="sample-caption"><span>Vietnam–Singapore partnership</span><b>↗</b></div></a>
             </div>
           </article>
