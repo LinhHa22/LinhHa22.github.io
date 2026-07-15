@@ -349,12 +349,11 @@
     .projects-heading > p:last-child { max-width: 690px; margin-bottom: 0; color: var(--muted); font-size: 1.02rem; }
     .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
     .project-card { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid rgba(17, 26, 34, .14); border-radius: 24px; background: var(--paper-bright); box-shadow: 0 22px 54px rgba(36, 78, 199, .09); }
-    .project-visual { position: relative; display: flex; min-height: 240px; align-items: center; justify-content: space-between; gap: 20px; padding: 26px; overflow: hidden; background: var(--project-color, var(--blue)); color: white; }
+    .project-visual { position: relative; display: flex; min-height: 240px; align-items: center; justify-content: flex-start; gap: 20px; padding: 26px; overflow: hidden; background: var(--project-color, var(--blue)); color: white; }
     .project-visual::after { position: absolute; right: -48px; bottom: -76px; width: 180px; height: 180px; border: 1px solid rgba(255, 255, 255, .42); border-radius: 50%; content: ""; }
     .project-theme { position: relative; z-index: 1; display: grid; flex: 1; min-width: 0; gap: 14px; align-items: end; }
     .project-theme svg { width: 58px; height: 58px; color: rgba(255, 255, 255, .92); }
     .project-theme span { max-width: 100%; font-size: clamp(2.85rem, 3.2vw, 4.3rem); font-weight: 850; letter-spacing: -.065em; line-height: .88; }
-    .project-visual > strong { position: relative; z-index: 1; flex: 0 0 auto; align-self: flex-end; font-size: clamp(2.85rem, 3.2vw, 4.3rem); line-height: .8; letter-spacing: -.1em; }
     .project-card:nth-child(2) { --project-color: #38604f; }
     .project-card:nth-child(3) { --project-color: #8a3346; }
     .project-body { display: flex; flex: 1; flex-direction: column; padding: 30px; }
@@ -761,7 +760,6 @@
                 <svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18h40a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V22a4 4 0 0 1 4-4Z"/><path d="M18 18v28M46 18v28"/><path d="M32 39s-9-5.2-9-11.2a5 5 0 0 1 9-3 5 5 0 0 1 9 3C41 33.8 32 39 32 39Z"/></svg>
                 <span>Loyalty Strategy</span>
               </div>
-              <strong>01</strong>
             </div>
             <div class="project-body">
               <div class="project-meta">Feb 2026 – Mar 2026</div>
@@ -782,7 +780,6 @@
                 <svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="39" cy="25" r="16"/><circle cx="39" cy="25" r="9"/><circle cx="39" cy="25" r="2" fill="currentColor" stroke="none"/><path d="M8 49 25 32M12 36l-4 13 13-4M25 49h27"/></svg>
                 <span>Market Entry</span>
               </div>
-              <strong>02</strong>
             </div>
             <div class="project-body">
               <div class="project-meta">Oct 2025 – Dec 2025</div>
@@ -803,7 +800,6 @@
                 <svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 26h44v28H10zM7 18h50v8H7zM32 18v36"/><path d="M32 18c-8 0-13-3-13-8 0-3 2-5 5-5 5 0 8 7 8 13ZM32 18c8 0 13-3 13-8 0-3-2-5-5-5-5 0-8 7-8 13Z"/><path d="M44 36h5M46.5 33.5v5"/></svg>
                 <span>Customer Experience</span>
               </div>
-              <strong>03</strong>
             </div>
             <div class="project-body">
               <div class="project-meta">Oct 2025 – Dec 2025</div>
@@ -857,7 +853,6 @@
         <div class="contact-actions">
           <a class="button" href="mailto:linhhtm22@gmail.com">Email me <span>↗</span></a>
           <a class="button" href="https://www.linkedin.com/in/halinh68/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
-          <a class="button" href="#" download="Linh-Portfolio.pdf">Download portfolio in PDF <span>↓</span></a>
         </div>
       </div>
     </section>
