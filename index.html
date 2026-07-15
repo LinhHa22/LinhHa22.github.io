@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Linh, an Amsterdam-based Marketing, Communications and Events Specialist working across B2B campaigns, social media, events and customer insight.">
+  <title>Linh — Marketing, Communications &amp; Events Specialist</title>
+  <style>
+    :root {
+      --ink: #111a22;
+      --ink-deep: #07121c;
+      --paper: #f2eee6;
+      --paper-bright: #fffdf8;
+      --blue: #244ec7;
+      --blue-pale: #d8e3ff;
+      --green: #9eb9ab;
+      --coral: #f16f5c;
+      --yellow: #d6ff64;
+      --muted: #5b666e;
+      --line: rgba(17, 26, 34, 0.16);
+      --radius: 26px;
+      --container: 1220px;
+      --shadow: 0 28px 80px rgba(7, 18, 28, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 10% 3%, rgba(216, 227, 255, .58), transparent 28rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.58;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::selection { background: var(--yellow); color: var(--ink-deep); }
+    img { display: block; width: 100%; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p, ul, dl, blockquote, figure { margin-top: 0; }
+    h1, h2, h3 { margin-bottom: 22px; letter-spacing: -.055em; line-height: .98; }
+    h1 { font-size: clamp(3.7rem, 7vw, 7.35rem); }
+    h2 { font-size: clamp(2.65rem, 5vw, 5.25rem); }
+    h3 { font-size: clamp(1.7rem, 3vw, 3rem); }
+
+    .container { width: min(calc(100% - 48px), var(--container)); margin-inline: auto; }
+    .section { padding-block: clamp(90px, 11vw, 150px); }
+    .eyebrow {
+      margin-bottom: 18px;
+      font-size: .71rem;
+      font-weight: 800;
+      letter-spacing: .19em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 999;
+      top: 10px;
+      left: 10px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--ink-deep);
+      color: white;
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: none; }
+
+    .site-header {
+      position: sticky;
+      z-index: 100;
+      top: 0;
+      border-bottom: 1px solid rgba(17, 26, 34, .1);
+      background: rgba(242, 238, 230, .89);
+      backdrop-filter: blur(18px);
+    }
+    .nav-shell {
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-size: .9rem; font-weight: 800; }
+    .brand-mark {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--ink-deep);
+      color: var(--paper-bright);
+      font-size: .64rem;
+      letter-spacing: .05em;
+    }
+    .main-nav { display: flex; align-items: center; gap: 28px; font-size: .78rem; font-weight: 750; }
+    .main-nav a { padding: 9px 0; }
+    .main-nav a:hover { color: var(--blue); }
+    .nav-linkedin {
+      padding: 11px 17px !important;
+      border-radius: 999px;
+      background: var(--ink-deep);
+      color: var(--paper-bright) !important;
+    }
+    .nav-linkedin:hover { background: var(--blue); }
+
+    .hero { position: relative; overflow: hidden; padding-block: clamp(76px, 8vw, 120px) clamp(90px, 10vw, 145px); }
+    .hero::before {
+      position: absolute;
+      top: 11%;
+      left: -15vw;
+      width: 43vw;
+      height: 43vw;
+      border: 1px solid rgba(17, 26, 34, .12);
+      border-radius: 50%;
+      content: "";
+    }
+    .hero::after {
+      position: absolute;
+      right: -84px;
+      bottom: 8%;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: var(--yellow);
+      content: "";
+      opacity: .75;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(390px, .92fr);
+      align-items: center;
+      gap: clamp(56px, 8vw, 110px);
+    }
+    .hero h1 { max-width: 820px; margin-bottom: 30px; color: var(--ink-deep); }
+    .hero h1 span { color: var(--blue); }
+    .hero-lede { max-width: 700px; margin-bottom: 34px; color: var(--muted); font-size: clamp(1.08rem, 1.6vw, 1.28rem); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 11px; }
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      padding: 14px 22px;
+      border: 1px solid var(--ink-deep);
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 800;
+      transition: transform .18s ease, background .18s ease, color .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--ink-deep); color: var(--paper-bright); }
+    .button-primary:hover { background: var(--blue); }
+    .button-secondary:hover { background: var(--paper-bright); }
+    .availability { display: flex; align-items: center; gap: 10px; margin-top: 25px; color: var(--muted); font-size: .77rem; font-weight: 650; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #48a66b; box-shadow: 0 0 0 5px rgba(72, 166, 107, .13); }
+
+    .portrait-stage { position: relative; min-height: 650px; }
+    .portrait-frame {
+      position: absolute;
+      inset: 0 36px 0 26px;
+      overflow: hidden;
+      border: 1px solid rgba(17, 26, 34, .12);
+      border-radius: 52% 52% 28px 28px;
+      background: linear-gradient(145deg, #c7d8ff, #b8d3c3 76%);
+      box-shadow: var(--shadow);
+    }
+    .portrait-frame::after { position: absolute; inset: 22px; border: 1px solid rgba(255, 255, 255, .5); border-radius: inherit; content: ""; }
+    .portrait-frame img { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 48%; }
+    .portrait-card {
+      position: absolute;
+      z-index: 4;
+      right: -20px;
+      bottom: 46px;
+      display: grid;
+      min-width: 212px;
+      padding: 20px 22px;
+      border: 1px solid rgba(17, 26, 34, .12);
+      border-radius: 18px;
+      background: rgba(255, 253, 248, .93);
+      box-shadow: 0 20px 48px rgba(7, 18, 28, .12);
+      backdrop-filter: blur(16px);
+    }
+    .portrait-card span, .portrait-card small { color: var(--muted); font-size: .67rem; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; }
+    .portrait-card strong { margin: 5px 0 9px; font-size: 1.34rem; letter-spacing: -.04em; }
+    .portrait-roles {
+      position: absolute;
+      z-index: 4;
+      bottom: 80px;
+      left: -22px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 12px;
+      width: 210px;
+      padding: 18px;
+      border: 1px solid rgba(17, 26, 34, .12);
+      border-radius: 18px;
+      background: rgba(255, 253, 248, .93);
+      box-shadow: 0 20px 48px rgba(7, 18, 28, .12);
+    }
+    .portrait-roles span { color: var(--blue); font-size: .64rem; font-weight: 800; }
+    .portrait-roles p { margin: 0; font-size: .75rem; font-weight: 750; line-height: 1.3; }
+
+    .proof { background: var(--ink-deep); color: white; }
+    .proof-grid { display: grid; grid-template-columns: 1.15fr repeat(3, 1fr); }
+    .proof-grid > * { min-height: 178px; padding: 34px 30px; border-right: 1px solid rgba(255, 255, 255, .13); }
+    .proof-grid > :first-child { border-left: 1px solid rgba(255, 255, 255, .13); }
+    .proof-intro { display: flex; flex-direction: column; justify-content: space-between; }
+    .proof-intro span { color: var(--yellow); font-size: .68rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    .proof-intro p { max-width: 220px; margin: 0; color: rgba(255, 255, 255, .59); font-size: .8rem; }
+    .metric { display: flex; flex-direction: column; justify-content: space-between; }
+    .metric strong { font-size: clamp(2.55rem, 4.3vw, 4.8rem); line-height: .88; letter-spacing: -.075em; }
+    .metric span { max-width: 190px; color: rgba(255, 255, 255, .64); font-size: .78rem; line-height: 1.4; }
+
+    .section-heading { max-width: 900px; margin-bottom: 64px; }
+    .section-heading h2 { max-width: 820px; margin-bottom: 24px; }
+    .section-heading > p:last-child { max-width: 680px; margin-bottom: 0; color: var(--muted); font-size: 1.02rem; }
+
+    .case-stack { display: grid; gap: 24px; }
+    .case {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper-bright);
+    }
+    .case-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(380px, .95fr); min-height: 600px; }
+    .case-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(48px, 6vw, 78px); }
+    .case-number { display: inline-flex; width: max-content; margin-bottom: 28px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .case h3 { max-width: 690px; }
+    .case-lede { max-width: 620px; color: var(--muted); }
+    .case-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 30px 0; }
+    .case-facts div { padding-top: 16px; border-top: 1px solid var(--line); }
+    .case-facts strong { display: block; margin-bottom: 3px; font-size: 1.45rem; letter-spacing: -.05em; }
+    .case-facts span { color: var(--muted); font-size: .72rem; }
+    .decision-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .decision-list li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; color: var(--muted); font-size: .84rem; }
+    .decision-list li::before { color: var(--blue); content: "→"; font-weight: 900; }
+    .case-visual { position: relative; min-height: 520px; overflow: hidden; }
+
+    .social-case { padding: clamp(44px, 6vw, 76px); }
+    .social-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .72fr); gap: clamp(42px, 8vw, 105px); align-items: end; margin-bottom: 46px; }
+    .social-intro h3 { max-width: 690px; }
+    .social-intro .case-lede { margin-bottom: 0; }
+    .social-summary .case-facts { margin-top: 0; }
+    .social-summary .case-facts strong { margin-bottom: 8px; color: var(--blue); font-size: clamp(2.6rem, 4.2vw, 4rem); line-height: .86; letter-spacing: -.075em; }
+    .social-summary .case-facts span { font-size: .76rem; font-weight: 700; }
+    .social-summary .decision-list { margin-top: 24px; }
+    .sample-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 18px; padding-top: 28px; border-top: 1px solid var(--line); }
+    .sample-heading h4 { margin: 0; font-size: 1.25rem; letter-spacing: -.035em; }
+    .sample-heading p { margin: 0; color: var(--muted); font-size: .72rem; }
+    .social-samples { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .social-sample { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); transition: transform .18s ease, box-shadow .18s ease; }
+    .social-sample:hover { transform: translateY(-4px); box-shadow: 0 18px 35px rgba(7, 18, 28, .11); }
+    .social-sample figure { display: grid; min-height: 255px; margin: 0; padding: 10px; place-items: center; overflow: hidden; background: #e8edfa; }
+    .social-sample img { width: 100%; height: 235px; object-fit: contain; }
+    .sample-caption { display: flex; flex: 1; align-items: end; justify-content: space-between; gap: 12px; padding: 15px; border-top: 1px solid var(--line); }
+    .sample-caption span { font-size: .7rem; font-weight: 800; line-height: 1.3; }
+    .sample-caption b { flex: 0 0 auto; color: var(--blue); font-size: .7rem; }
+
+    .insights-case { padding: clamp(44px, 6vw, 76px); background: #dce8e2; }
+    .insights-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, .74fr); gap: clamp(42px, 8vw, 105px); align-items: end; margin-bottom: 42px; }
+    .insights-intro h3 { max-width: 760px; margin-bottom: 0; }
+    .insights-intro > p { margin-bottom: 0; color: #52635b; }
+    .insights-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .insight-card { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid rgba(17, 26, 34, .14); border-radius: 21px; background: var(--paper-bright); }
+    .insight-visual { display: grid; height: 365px; padding: 24px; place-items: center; overflow: hidden; }
+    .insight-visual.make-difference { background: #c5d4f4; }
+    .insight-visual.ev-report { background: #f1f3f5; place-items: center; }
+    .insight-visual img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 20px 30px rgba(7, 18, 28, .16)); }
+    .ev-report-crop { position: relative; height: 100%; aspect-ratio: 490 / 842; overflow: hidden; background: white; filter: drop-shadow(0 20px 30px rgba(7, 18, 28, .16)); }
+    .insight-visual.ev-report .ev-report-crop img { position: absolute; top: -16.15%; left: -33.88%; width: 163.27%; height: auto; max-width: none; object-fit: initial; filter: none; }
+    .insight-body { display: flex; flex: 1; flex-direction: column; padding: clamp(28px, 4vw, 42px); }
+    .insight-body .eyebrow { color: var(--blue); }
+    .insight-body h4 { margin: 0 0 15px; font-size: clamp(1.8rem, 3vw, 2.65rem); letter-spacing: -.05em; line-height: .98; }
+    .insight-body > p { color: var(--muted); font-size: .84rem; }
+    .insight-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 16px 0 24px; }
+    .insight-metrics.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .insight-metrics div { padding-top: 15px; border-top: 1px solid var(--line); }
+    .insight-metrics strong { display: block; margin-bottom: 5px; color: #173b50; font-size: clamp(2rem, 4vw, 3.5rem); line-height: .9; letter-spacing: -.07em; }
+    .insight-metrics span { display: block; color: var(--muted); font-size: .65rem; line-height: 1.35; }
+    .insight-posm { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); }
+    .insight-posm > span { display: block; margin-bottom: 10px; color: var(--ink); font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .insight-links { display: flex; flex-wrap: wrap; gap: 7px; }
+    .insight-links a { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--blue); font-size: .63rem; font-weight: 750; }
+    .insight-links a:hover { border-color: var(--blue); background: var(--blue); color: white; }
+
+    .event-case { padding: clamp(44px, 6vw, 76px); background: var(--ink-deep); color: white; }
+    .event-intro { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(44px, 8vw, 110px); align-items: end; margin-bottom: 44px; }
+    .event-intro h3 { max-width: 650px; margin-bottom: 0; }
+    .event-summary { max-width: 650px; margin-bottom: 0; color: rgba(255, 255, 255, .66); }
+    .event-case .case-number { border-color: rgba(255, 255, 255, .18); }
+    .event-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .event-card { display: flex; min-width: 0; height: 100%; overflow: hidden; flex-direction: column; border: 1px solid rgba(255, 255, 255, .14); border-radius: 20px; background: #0d1b27; }
+    .event-card figure { position: relative; height: 225px; margin: 0; overflow: hidden; }
+    .event-card figure::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(7, 18, 28, .64)); content: ""; }
+    .event-card img { height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .event-card:hover img { transform: scale(1.025); }
+    .event-card-body { display: flex; flex: 1; flex-direction: column; padding: 26px; }
+    .event-card .event-type { margin-bottom: 12px; color: #a8b9ff; font-size: .65rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .event-card h4 { margin: 0 0 12px; font-size: clamp(1.32rem, 2vw, 1.72rem); letter-spacing: -.045em; line-height: 1.04; }
+    .event-card p { margin-bottom: 18px; color: rgba(255, 255, 255, .62); font-size: .78rem; }
+    .event-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0 0 18px; }
+    .event-metrics.one { grid-template-columns: 1fr; }
+    .event-metrics div { padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .15); }
+    .event-metrics strong { display: block; font-size: 1.48rem; letter-spacing: -.05em; }
+    .event-metrics span { display: block; color: rgba(255, 255, 255, .54); font-size: .61rem; line-height: 1.35; }
+    .event-role { padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, .15); }
+    .event-role b { display: block; margin-bottom: 5px; color: #d5ddff; font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; }
+    .event-role span { display: block; color: rgba(255, 255, 255, .67); font-size: .72rem; line-height: 1.5; }
+
+    @media (min-width: 901px) {
+      .event-card h4 { min-height: 3.25em; }
+      .event-card-body > p { min-height: 6.2em; }
+      .event-metrics { min-height: 82px; }
+      .event-role { min-height: 125px; margin-top: auto; }
+    }
+
+    .sport-case { background: #7d2638; color: white; }
+    .sport-case .case-lede, .sport-case .decision-list li { color: rgba(255, 255, 255, .76); }
+    .sport-case .case-number { border-color: rgba(255, 255, 255, .24); }
+    .sport-case .decision-list li::before { color: #cbd5ff; }
+    .sport-visual { display: grid; place-items: center; padding: clamp(34px, 5vw, 64px); overflow: hidden; background: linear-gradient(145deg, #651c2c, #3c1320); }
+    .sport-metrics { display: grid; width: min(100%, 420px); gap: 16px; }
+    .sport-metric { padding: clamp(28px, 4vw, 44px); border: 1px solid rgba(255, 255, 255, .22); border-radius: 22px; background: rgba(255, 255, 255, .09); box-shadow: 0 24px 60px rgba(30, 5, 12, .2); }
+    .sport-metric span { display: block; margin-bottom: 9px; color: #cbd5ff; font-size: .66rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .sport-metric strong { display: block; margin-bottom: 8px; font-size: clamp(4rem, 7vw, 6.6rem); line-height: .82; letter-spacing: -.085em; }
+    .sport-metric p { margin: 0; color: rgba(255, 255, 255, .72); font-size: .78rem; }
+
+    .expertise { background: var(--ink-deep); color: white; }
+    .expertise-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(70px, 10vw, 150px); }
+    .expertise-heading { position: sticky; top: 120px; align-self: start; }
+    .expertise-heading p:last-child { max-width: 500px; color: rgba(255, 255, 255, .58); }
+    .expertise-list article { display: grid; grid-template-columns: 76px 1fr; gap: 24px; padding: 33px 0 39px; border-top: 1px solid rgba(255, 255, 255, .16); }
+    .expertise-list article:last-child { border-bottom: 1px solid rgba(255, 255, 255, .16); }
+    .expertise-list article > span { color: #91a9ff; font-size: 1.55rem; font-weight: 800; letter-spacing: -.05em; line-height: 1; }
+    .expertise-list h3 { margin-bottom: 9px; font-size: clamp(1.8rem, 2.7vw, 2.65rem); }
+    .expertise-list p { max-width: 570px; margin: 0; color: rgba(255, 255, 255, .58); }
+
+    .projects { background: var(--blue-pale); }
+    .projects-heading { max-width: 880px; margin-bottom: 55px; }
+    .projects-heading h2 { margin-bottom: 22px; }
+    .projects-heading > p:last-child { max-width: 690px; margin-bottom: 0; color: var(--muted); font-size: 1.02rem; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .project-card { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid rgba(17, 26, 34, .14); border-radius: 24px; background: var(--paper-bright); box-shadow: 0 22px 54px rgba(36, 78, 199, .09); }
+    .project-visual { position: relative; display: flex; min-height: 205px; align-items: center; justify-content: space-between; gap: 20px; padding: 26px; overflow: hidden; background: var(--project-color, var(--blue)); color: white; }
+    .project-visual::after { position: absolute; right: -48px; bottom: -76px; width: 180px; height: 180px; border: 1px solid rgba(255, 255, 255, .42); border-radius: 50%; content: ""; }
+    .project-theme { position: relative; z-index: 1; display: grid; gap: 14px; align-items: end; }
+    .project-theme svg { width: 58px; height: 58px; color: rgba(255, 255, 255, .92); }
+    .project-theme span { max-width: 190px; font-size: 1.22rem; font-weight: 850; letter-spacing: -.035em; line-height: 1.05; }
+    .project-visual > strong { position: relative; z-index: 1; align-self: flex-end; font-size: 4.3rem; line-height: .8; letter-spacing: -.1em; }
+    .project-card:nth-child(2) { --project-color: #38604f; }
+    .project-card:nth-child(3) { --project-color: #8a3346; }
+    .project-body { display: flex; flex: 1; flex-direction: column; padding: 30px; }
+    .project-meta { margin-bottom: 15px; color: var(--blue); font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .project-body h3.project-name { min-height: 3.5em; margin-bottom: 20px; color: var(--ink-deep); font-size: 1.03rem; font-weight: 800; letter-spacing: -.025em; line-height: 1.35; }
+    .project-body p { margin-bottom: 16px; color: var(--muted); font-size: .79rem; }
+    .project-body p strong { color: var(--ink); }
+    .project-result { margin-top: 8px; padding: 18px; border-radius: 14px; background: var(--paper); color: var(--ink) !important; }
+    .project-result b { color: var(--blue); }
+    .project-footer { margin-top: auto; padding-top: 2px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+    .skill-tags span { padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .6rem; font-weight: 750; }
+    .project-actions { display: flex; min-height: 48px; align-items: flex-end; margin-top: 14px; }
+    .project-actions:empty { visibility: hidden; }
+    .project-link { display: inline-flex; min-height: 42px; align-items: center; justify-content: space-between; gap: 18px; padding: 10px 15px; border: 1px solid var(--ink-deep); border-radius: 999px; background: var(--ink-deep); color: white; font-size: .68rem; font-weight: 800; transition: transform .18s ease, background .18s ease; }
+    .project-link:hover { background: var(--blue); transform: translateY(-2px); }
+
+    .about { background: var(--paper-bright); }
+    .about-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(62px, 10vw, 140px); align-items: start; }
+    .about-intro h2 { max-width: 570px; }
+    .about-intro p:not(.eyebrow) { color: var(--muted); }
+    .timeline { border-top: 1px solid var(--line); }
+    .timeline article { display: grid; grid-template-columns: 130px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .timeline time { color: var(--blue); font-size: .7rem; font-weight: 800; }
+    .timeline h3 { margin-bottom: 5px; font-size: 1.4rem; letter-spacing: -.035em; line-height: 1.1; }
+    .timeline strong { display: block; margin-bottom: 7px; font-size: .77rem; }
+    .timeline p { margin: 0; color: var(--muted); font-size: .82rem; }
+    .education-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 50px; }
+    .education-strip article { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .education-strip span { color: var(--blue); font-size: .67rem; font-weight: 800; }
+    .education-strip h3 { margin: 10px 0 7px; font-size: 1.45rem; }
+    .education-strip p { margin: 0; color: var(--muted); font-size: .76rem; }
+    .education-strip p strong { color: var(--ink); font-weight: 750; }
+
+    .contact { background: #244ec7; color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 70px; }
+    .contact h2 { max-width: 930px; margin-bottom: 0; }
+    .contact .eyebrow { color: #d6ff64; }
+    .contact-actions { display: flex; min-width: 220px; flex-direction: column; gap: 12px; }
+    .contact-actions .button { width: 100%; border-color: white; background: var(--paper-bright); color: var(--ink-deep); }
+    .contact-actions .button:hover { background: var(--yellow); }
+    .contact-details { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 35px; font-size: .78rem; font-weight: 750; }
+    .contact-details a { text-decoration: underline; text-underline-offset: 5px; }
+
+    footer { background: var(--ink-deep); color: white; }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px; padding-block: 42px; }
+    .footer-grid strong { display: block; margin-bottom: 7px; }
+    .footer-grid p { margin: 0; color: rgba(255,255,255,.55); font-size: .72rem; }
+    .footer-links { display: flex; gap: 22px; font-size: .72rem; font-weight: 750; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .case-grid, .social-intro, .insights-intro, .event-intro, .expertise-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .portrait-stage { width: min(100%, 570px); min-height: 680px; margin: 20px auto 0; }
+      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof-grid > *:nth-child(odd) { border-left: 1px solid rgba(255,255,255,.13); }
+      .social-samples { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .insights-grid, .event-cards, .project-grid { grid-template-columns: 1fr; }
+      .insight-card { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); }
+      .insight-visual { height: 430px; min-height: 430px; }
+      .event-card { display: grid; grid-template-columns: minmax(240px, .8fr) minmax(0, 1.2fr); }
+      .event-card figure { height: 100%; min-height: 330px; }
+      .case-visual { min-height: 500px; }
+      .expertise-heading { position: static; }
+      .contact-grid { align-items: start; }
+      .contact-actions { width: min(100%, 280px); }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 32px), var(--container)); }
+      .main-nav { gap: 13px; font-size: .68rem; }
+      .main-nav a:nth-child(2), .main-nav a:nth-child(3), .brand span:last-child { display: none; }
+      .hero { padding-top: 54px; }
+      .hero h1 { font-size: clamp(3.15rem, 15vw, 5rem); }
+      .button-row .button { width: 100%; }
+      .portrait-stage { min-height: 540px; }
+      .portrait-frame { inset-inline: 10px; }
+      .portrait-roles { bottom: 35px; left: -2px; width: 188px; padding: 14px; }
+      .portrait-card { right: -2px; bottom: 20px; min-width: 174px; padding: 15px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-grid > * { min-height: 145px; border-left: 1px solid rgba(255,255,255,.13); }
+      .case-copy { padding: 38px 25px; }
+      .case-facts { grid-template-columns: 1fr; }
+      .case-visual { min-height: 370px; }
+      .social-case, .insights-case { padding: 32px 22px; }
+      .sample-heading { align-items: start; flex-direction: column; gap: 7px; }
+      .social-samples { grid-template-columns: 1fr; }
+      .social-sample figure { min-height: 330px; }
+      .social-sample img { height: 310px; }
+      .insight-card { display: flex; }
+      .insight-visual { min-height: 340px; }
+      .insight-metrics.three { grid-template-columns: repeat(3, 1fr); }
+      .event-case { padding: 32px 22px; }
+      .event-card { display: flex; }
+      .event-card figure { min-height: 230px; }
+      .event-metrics { grid-template-columns: repeat(3, 1fr); }
+      .expertise-list article { grid-template-columns: 56px 1fr; gap: 16px; }
+      .expertise-list article > span { font-size: 1.3rem; }
+      .timeline article { grid-template-columns: 1fr; gap: 8px; }
+      .education-strip, .footer-grid { grid-template-columns: 1fr; }
+      .footer-links { flex-wrap: wrap; }
+    }
+
+    @media print {
+      .site-header { position: static; }
+      .button, .nav-linkedin { border: 1px solid var(--ink); }
+      .section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="Linh, home">
+        <span class="brand-mark">L</span>
+        <span>Linh</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#about">About</a>
+        <a class="nav-linkedin" href="https://www.linkedin.com/in/halinh68/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Marketing, Communications &amp; Events Specialist · Amsterdam</p>
+          <h1>I turn complex expertise into marketing people understand<span> — and act on.</span></h1>
+          <p class="hero-lede">I&apos;m Linh. For 4+ years, I have built content systems, social channels, thought-leadership campaigns and B2B events that connect business priorities with real audience needs.</p>
+          <div class="button-row">
+            <a class="button button-primary" href="#work">Explore work highlights <span>↓</span></a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/halinh68/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+          </div>
+          <div class="availability"><span class="status-dot" aria-hidden="true"></span>Based in Amsterdam · Available now · Full NL work authorization</div>
+        </div>
+
+        <div class="portrait-stage">
+          <div class="portrait-frame"><img src="assets/profile.webp" alt="Linh, Marketing, Communications and Events Specialist"></div>
+          <div class="portrait-card"><span>Built across</span><strong>B2B + B2C</strong><small>Vietnam → The Netherlands</small></div>
+          <div class="portrait-roles" aria-label="Core professional areas">
+            <span>01</span><p>Marketing communications</p>
+            <span>02</span><p>B2B events</p>
+            <span>03</span><p>Customer insight</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Career highlights">
+      <div class="container proof-grid">
+        <div class="proof-intro"><span>Impact highlights</span><p>Evidence from work delivered — not vanity metrics.</p></div>
+        <div class="metric"><strong>+87K</strong><span>followers added across KPMG LinkedIn and Facebook</span></div>
+        <div class="metric"><strong>500+</strong><span>go-to-market activities supported</span></div>
+        <div class="metric"><strong>1,500+</strong><span>attendees per flagship event cycle</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Case-study highlights</p>
+          <h2>Work that shows how I think.</h2>
+          <p>Each case focuses on the challenge, the decisions I contributed and what changed — with ownership kept clear.</p>
+        </div>
+
+        <div class="case-stack">
+          <article class="case social-case">
+            <div class="social-intro">
+              <div>
+                <span class="case-number">Case 01 · KPMG Vietnam</span>
+                <p class="eyebrow">Social media &amp; brand operations</p>
+                <h3>Building the system behind sustained audience growth.</h3>
+                <p class="case-lede">The challenge was not simply to publish more. Multiple service lines, technical subject matter and global brand standards needed one reliable operating rhythm.</p>
+              </div>
+              <div class="social-summary">
+                <div class="case-facts">
+                  <div><strong>+200%</strong><span>LinkedIn growth · +44K followers</span></div>
+                  <div><strong>+179%</strong><span>Facebook growth · +43K followers</span></div>
+                </div>
+                <ul class="decision-list">
+                  <li>Built a local workflow connecting editorial planning, creative briefs, approvals, publishing and review.</li>
+                  <li>Translated specialist knowledge and global messages into accessible, locally relevant stories.</li>
+                  <li>Briefed and quality-controlled designers and video editors from concept to delivery.</li>
+                  <li>Used performance patterns to refine topics, formats and channel decisions.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="sample-heading">
+              <h4>Social-media highlights</h4>
+              <p>Click any sample to open the original published post.</p>
+            </div>
+            <div class="social-samples" aria-label="KPMG Vietnam social media highlights">
+              <a class="social-sample" href="https://www.facebook.com/photo.php?fbid=1012562664231481&amp;set=a.553147423506343&amp;type=3" target="_blank" rel="noreferrer"><figure><img src="assets/social-01.webp" alt="KPMG Vietnam Tet Holiday Announcement social post"></figure><div class="sample-caption"><span>Tet Holiday Announcement</span><b>↗</b></div></a>
+              <a class="social-sample" href="https://fb.watch/z8qt4lMBeU/" target="_blank" rel="noreferrer"><figure><img src="assets/social-02.webp" alt="KPMG business opportunities social video"></figure><div class="sample-caption"><span>Business-opportunity video</span><b>↗</b></div></a>
+              <a class="social-sample" href="https://www.facebook.com/reel/1559784827899702?fs=e&amp;fs=e" target="_blank" rel="noreferrer"><figure><img src="assets/social-03.webp" alt="KPMG We break barriers brand reel"></figure><div class="sample-caption"><span>“We break barriers” brand reel</span><b>↗</b></div></a>
+              <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid02YSGLeYYPkkszsp6FgRqZVCRvNy61JXsv7GMsm7rrTCVrraDssAamXdPSFmVzrnaml/" target="_blank" rel="noreferrer"><figure><img src="assets/social-04.webp" alt="ACCA and KPMG ESG event promotion post"></figure><div class="sample-caption"><span>ESG event promotion</span><b>↗</b></div></a>
+              <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid02Dz7eYbtpfMRo7cPmsCWTUYRZcK1cwBKHSgf2X39Hze8BP7JGvaCqdk67YqsibN6sl/" target="_blank" rel="noreferrer"><figure><img src="assets/social-05.webp" alt="KPMG Trade and Customs insight post"></figure><div class="sample-caption"><span>Trade &amp; Customs insight</span><b>↗</b></div></a>
+              <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid02sX7LopRLd4tJ2QYQDudx4DMRdWopRmuLUK4xohN16NquDwssFavi8Jmgftqx4mA1l/" target="_blank" rel="noreferrer"><figure><img src="assets/social-06.webp" alt="KPMG Audit Leaders Network event post"></figure><div class="sample-caption"><span>Audit Leaders Network event</span><b>↗</b></div></a>
+              <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid02QDEcZHrpdxqJB5LbGEbtZjN9DDQFEeQQwAKT3gLqqRKfaRBJ2q2wRW9EDSgHerCLl/" target="_blank" rel="noreferrer"><figure><img src="assets/social-07.webp" alt="KPMG Decree 182 insight post with The Business Times"></figure><div class="sample-caption"><span>Decree 182 insight</span><b>↗</b></div></a>
+              <a class="social-sample" href="https://www.facebook.com/100064332713122/posts/pfbid0BheN7DwTpeZiUvgmAZ6Lqz7eJbUq9t9ydED3XxWGb74XiB3oBj4SKh5Lgi38d8eQl/" target="_blank" rel="noreferrer"><figure><img src="assets/social-08.webp" alt="KPMG Vietnam and Singapore partnership post"></figure><div class="sample-caption"><span>Vietnam–Singapore partnership</span><b>↗</b></div></a>
+            </div>
+          </article>
+
+          <article class="case insights-case">
+            <div class="insights-intro">
+              <div>
+                <span class="case-number">Case 02 · KPMG Vietnam</span>
+                <p class="eyebrow">Industry insights &amp; integrated campaigns</p>
+                <h3>Transforming industry insights into strategic opportunities.</h3>
+              </div>
+              <p>Insight-led campaigns positioned complex expertise as something audiences could understand, engage with and act on — across content, events, media and digital channels.</p>
+            </div>
+
+            <div class="insights-grid">
+              <article class="insight-card">
+                <div class="insight-visual make-difference"><img src="assets/make-the-difference.webp" alt="KPMG Make the Difference campaign podcast displayed across digital devices"></div>
+                <div class="insight-body">
+                  <p class="eyebrow">Global campaign localization</p>
+                  <h4>KPMG. Make the Difference.</h4>
+                  <p>Contributed to the localization of KPMG&apos;s global “Make the Difference” campaign in Vietnam, aligning brand visuals and messaging across platforms. The campaign repositioned KPMG as a multi-service firm — equally strong in consulting, transformation and advisory as it is in audit.</p>
+                  <div class="insight-metrics">
+                    <div><strong>4</strong><span>business opportunities</span></div>
+                    <div><strong>$450,000</strong><span>generated</span></div>
+                  </div>
+                  <div class="insight-posm"><span>Campaign assets</span><div class="insight-links">
+                    <a href="https://drive.google.com/drive/folders/1yI_0WE4FnE7LSA2ewe915Crg_dnE0SBC" target="_blank" rel="noreferrer">Email marketing ↗</a>
+                    <a href="https://fb.watch/yZ-oY7AkCJ/" target="_blank" rel="noreferrer">Hero video ↗</a>
+                    <a href="https://youtu.be/W6Gqz2wJAEI?si=uxEkmkcTbISSuzMK" target="_blank" rel="noreferrer">Podcast ↗</a>
+                    <a href="https://www.linkedin.com/posts/kpmg-viet-nam_kpmg-kpmginvietnam-makethedifference-activity-7090903773153280000-O2Dd/" target="_blank" rel="noreferrer">LinkedIn article ↗</a>
+                    <a href="https://m.facebook.com/story.php?story_fbid=pfbid07oFNdekzZ38KLZjHZkGUzhHRCn7qwzEUaa1u6ud2NRF8Fs9SqqW7ZsG1244SwNQDl&amp;id=100064332713122" target="_blank" rel="noreferrer">Facebook reel ↗</a>
+                  </div></div>
+                </div>
+              </article>
+
+              <article class="insight-card">
+                <div class="insight-visual ev-report"><div class="ev-report-crop"><img src="assets/ev-report.webp" alt="KPMG Electric Vehicle Report 2024 launch social post"></div></div>
+                <div class="insight-body">
+                  <p class="eyebrow">Thought-leadership launch</p>
+                  <h4>Electric Vehicle Report 2024</h4>
+                  <p>Developed and led the full promotional strategy, combining content, event collaboration and digital outreach to engage automotive-industry stakeholders, including manufacturers, dealerships and policymakers.</p>
+                  <div class="insight-metrics three">
+                    <div><strong>600+</strong><span>report downloads</span></div>
+                    <div><strong>80+</strong><span>industry leaders at launch</span></div>
+                    <div><strong>3</strong><span>business interactions after promotion</span></div>
+                  </div>
+                  <div class="insight-posm"><span>Launch assets</span><div class="insight-links">
+                    <a href="https://kpmg.com/vn/en/home/insights/2024/07/the-ev-landscape-in-vietnam.html" target="_blank" rel="noreferrer">Website ↗</a>
+                    <a href="https://drive.google.com/drive/folders/1kCCJFZzXprMDl7rnqYyfS2_zR5pGNHCG" target="_blank" rel="noreferrer">Email marketing ↗</a>
+                    <a href="https://docs.google.com/document/d/1NRYWnOMaiYNWQcGQPP51H49A03NMixrz/edit" target="_blank" rel="noreferrer">Press release ↗</a>
+                    <a href="https://www.facebook.com/100064332713122/posts/pfbid02MfguU3bdeqGsGLRswRrq4RTpFSbKj3SeBRXUwwGoJB1RbsWJUMjZkdFjM3gEBM85l/" target="_blank" rel="noreferrer">Social-media post ↗</a>
+                  </div></div>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="case event-case">
+            <div class="event-intro">
+              <div>
+                <span class="case-number">Case 03 · KPMG Vietnam</span>
+                <p class="eyebrow">B2B event marketing</p>
+                <h3>One portfolio. Three distinct audience experiences.</h3>
+              </div>
+              <p class="event-summary">Across flagship in-person, virtual and partner-led formats, I contributed to the systems behind the audience experience: promotion, stakeholder alignment, vendor coordination, production and post-event learning.</p>
+            </div>
+
+            <div class="event-cards" aria-label="B2B event highlights">
+              <article class="event-card">
+                <figure><img src="assets/event-stage.webp" alt="KPMG Tax and Legal Institute conference stage"></figure>
+                <div class="event-card-body">
+                  <span class="event-type">Flagship multi-city forum</span>
+                  <h4>Tax &amp; Legal Institute</h4>
+                  <p>A recurring multilingual program for senior finance and corporate leaders across Vietnam.</p>
+                  <div class="event-metrics">
+                    <div><strong>1,500+</strong><span>attendees per cycle</span></div>
+                    <div><strong>~70%</strong><span>C-suite audience</span></div>
+                    <div><strong>94%</strong><span>overall satisfaction</span></div>
+                  </div>
+                  <div class="event-role"><b>My contribution</b><span>Co-coordinated booths, vendor briefings, partner activations, logistics, on-site delivery and attendee-feedback reporting.</span></div>
+                </div>
+              </article>
+
+              <article class="event-card">
+                <figure><img src="assets/event-virtual.webp" alt="IFRS Day virtual conference production"></figure>
+                <div class="event-card-body">
+                  <span class="event-type">Virtual conference</span>
+                  <h4>IFRS Day — The Future of Finance in Vietnam</h4>
+                  <p>A large-scale virtual forum delivered with Vietnam Investment Review (Báo Đầu Tư) for business and finance leaders.</p>
+                  <div class="event-metrics one">
+                    <div><strong>800+</strong><span>attendees and business leaders</span></div>
+                  </div>
+                  <div class="event-role"><b>My contribution</b><span>Supported audience promotion and partner-channel coordination while aligning communications and production touchpoints around one experience.</span></div>
+                </div>
+              </article>
+
+              <article class="event-card">
+                <figure><img src="assets/event-esg.webp" alt="KPMG and ACCA ESG memorandum of understanding signing event"></figure>
+                <div class="event-card-body">
+                  <span class="event-type">Partnership &amp; ESG activation</span>
+                  <h4>Pioneering ESG Excellence</h4>
+                  <p>An ACCA–KPMG MOU signing that brought ESG leaders together around responsible business transformation.</p>
+                  <div class="event-metrics one">
+                    <div><strong>200+</strong><span>attendees and ESG leaders</span></div>
+                  </div>
+                  <div class="event-role"><b>My contribution</b><span>Supported event promotion, stakeholder alignment and experience delivery across the partnership activation.</span></div>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="case sport-case">
+            <div class="case-grid">
+              <div class="case-copy">
+                <span class="case-number">Case 04 · VH Sport</span>
+                <p class="eyebrow">Consumer social &amp; brand building</p>
+                <h3>Giving a growing sportswear brand a stronger social rhythm.</h3>
+                <p class="case-lede">Alongside my full-time KPMG role, I helped turn product information into clearer benefits, stronger hooks and a repeatable launch cadence across Facebook and TikTok. Across both channels, the strategy prioritized organic, platform-native growth.</p>
+                <ul class="decision-list">
+                  <li>Connected product benefits with audience motivations, use cases and lifestyle relevance.</li>
+                  <li>Adapted one proposition into product-led Facebook copy and platform-native TikTok hooks.</li>
+                  <li>Aligned copy, design and video around the brand&apos;s bi-monthly launch rhythm.</li>
+                </ul>
+              </div>
+              <div class="case-visual sport-visual">
+                <div class="sport-metrics" aria-label="VH Sport channel growth">
+                  <div class="sport-metric"><span>Facebook growth</span><strong>+270%</strong><p>Clearer product benefits and a repeatable launch cadence.</p></div>
+                  <div class="sport-metric"><span>TikTok growth</span><strong>4K+</strong><p>Followers built from zero within 12 months.</p></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section expertise" id="expertise">
+      <div class="container expertise-grid">
+        <div class="expertise-heading">
+          <p class="eyebrow">Where I create value</p>
+          <h2>Strategy that survives the real world.</h2>
+          <p>My strength is the space between the idea and the outcome: the systems, judgment and collaboration that make good marketing repeatable.</p>
+        </div>
+        <div class="expertise-list">
+          <article><span>01</span><div><h3>Audience &amp; content strategy</h3><p>Translate technical or product information into a clear audience reason to care.</p></div></article>
+          <article><span>02</span><div><h3>Campaign &amp; channel operations</h3><p>Build briefs, workflows, approvals and quality checks that keep execution moving.</p></div></article>
+          <article><span>03</span><div><h3>Stakeholder &amp; partner alignment</h3><p>Coordinate experts, leaders, agencies and vendors without losing the audience objective.</p></div></article>
+          <article><span>04</span><div><h3>Insight &amp; improvement</h3><p>Use performance data, surveys and research to make the next decision stronger.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="projects-heading">
+          <p class="eyebrow">Highlights · VU Amsterdam · 2025–2026</p>
+          <h2>Research translated into practical market decisions.</h2>
+          <p>Three team projects applying customer research, strategy and prototyping to real business questions — presented together as one academic portfolio.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-visual">
+              <div class="project-theme">
+                <svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18h40a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V22a4 4 0 0 1 4-4Z"/><path d="M18 18v28M46 18v28"/><path d="M32 39s-9-5.2-9-11.2a5 5 0 0 1 9-3 5 5 0 0 1 9 3C41 33.8 32 39 32 39Z"/></svg>
+                <span>Loyalty Strategy</span>
+              </div>
+              <strong>01</strong>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">Feb 2026 – Mar 2026</div>
+              <h3 class="project-name">Vue Cinemas — Loyalty Strategy Proposal</h3>
+              <p><strong>Problem:</strong> Vue Cinemas, a challenger cinema brand in the Netherlands, wanted to build genuine customer loyalty rather than relying on customers who simply had no other nearby cinema to choose from.</p>
+              <p><strong>Approach:</strong> Designed and ran a survey (84 respondents) on cinema choice and booking behavior, then analyzed the actual effect of Vue&apos;s Movie Pass subscription on visit frequency and spend.</p>
+              <p class="project-result"><b>Solved:</b> Found location, not the loyalty program, as the #1 driver of cinema choice (quality was #2), and that Movie Pass raised visit frequency but not spend, leading to a recommendation for a location-segmented loyalty strategy over a blanket keep-or-drop decision.</p>
+              <div class="project-footer">
+                <div class="skill-tags"><span>Survey</span><span>Design</span><span>Market Research</span><span>A/B Testing</span><span>Brand Strategy</span></div>
+                <div class="project-actions"><a class="project-link" href="https://drive.google.com/file/d/10YOF698C1tiNo9hbBhPErJqssS2NLoQ5/view?usp=share_link" target="_blank" rel="noreferrer">View presentation slides <span>↗</span></a></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">
+              <div class="project-theme">
+                <svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="39" cy="25" r="16"/><circle cx="39" cy="25" r="9"/><circle cx="39" cy="25" r="2" fill="currentColor" stroke="none"/><path d="M8 49 25 32M12 36l-4 13 13-4M25 49h27"/></svg>
+                <span>Market Entry</span>
+              </div>
+              <strong>02</strong>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">Oct 2025 – Dec 2025</div>
+              <h3 class="project-name">ClayTec — Dutch Market Entry Strategy</h3>
+              <p><strong>Problem:</strong> ClayTec had scaled from a craftsman workshop into standardized products without ever formally defining its market positioning, target segments, or competitive landscape.</p>
+              <p><strong>Approach:</strong> Worked on market segmentation, competitor analysis and stakeholder mapping (homeowner → architect → contractor → wholesaler → installer), and built the go-to-market roadmap and brand positioning.</p>
+              <p class="project-result"><b>Solved:</b> Delivered a 3-phase go-to-market roadmap for the Dutch residential renovation segment, with a concrete distribution approach and clear positioning ("ultra-low CO₂, fully circular, naturally healthier") in place of a generic strategy.</p>
+              <div class="project-footer">
+                <div class="skill-tags"><span>Stakeholder Mapping</span><span>Go-to-Market Strategy</span><span>Market Segmentation</span><span>Competitive Analysis</span></div>
+                <div class="project-actions"><a class="project-link" href="https://drive.google.com/file/d/1qgCbnYWkrbkcz3e9z4OstUEKzfw5iTG6/view?usp=share_link" target="_blank" rel="noreferrer">View presentation slides <span>↗</span></a></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">
+              <div class="project-theme">
+                <svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 26h44v28H10zM7 18h50v8H7zM32 18v36"/><path d="M32 18c-8 0-13-3-13-8 0-3 2-5 5-5 5 0 8 7 8 13ZM32 18c8 0 13-3 13-8 0-3-2-5-5-5-5 0-8 7-8 13Z"/><path d="M44 36h5M46.5 33.5v5"/></svg>
+                <span>Customer Experience</span>
+              </div>
+              <strong>03</strong>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">Oct 2025 – Dec 2025</div>
+              <h3 class="project-name">Reinventing the Gifting Experience for a Dutch Jewelry Retailer</h3>
+              <p><strong>Problem:</strong> The retailer&apos;s gifting journey, its most important sales occasion, lacked any emotional connection: no storytelling online, generic packaging, no personalized help in-store.</p>
+              <p><strong>Approach:</strong> Diagnosed the journey gaps, designed a prototype (a redesigned gift box with a QR code linking to a personal voice message from the gift-giver, plus an in-store recording booth), and tested it with a customer survey.</p>
+              <p class="project-result"><b>Solved:</b> The new packaging concept scored significantly higher than the current one on feeling personal (+24%), memorable (+18%), and better overall (+49%).</p>
+              <div class="project-footer">
+                <div class="skill-tags"><span>Customer Research</span><span>Prototyping</span><span>Service Design</span><span>Customer Journey Mapping</span></div>
+                <div class="project-actions"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-intro">
+          <p class="eyebrow">About me</p>
+          <h2>I make complex work clear enough to move.</h2>
+          <p>Four years at KPMG Vietnam shaped how I manage complexity: technical subject matter, multiple stakeholders, strict brand standards and fast-moving delivery timelines.</p>
+          <p>After that professional foundation, I completed an MSc in Marketing at Vrije Universiteit Amsterdam to deepen my work with customer insight, experimental research and evidence-based decision-making.</p>
+          <div class="education-strip">
+            <article><span>2025–2026 · Amsterdam</span><h3>MSc Marketing</h3><p><strong>Vrije Universiteit Amsterdam</strong><br>Brand &amp; Customer Management</p></article>
+            <article><span>2017–2021 · Vietnam</span><h3>BBA, Digital Marketing</h3><p><strong>FPT University</strong><br>Digital Marketing</p></article>
+          </div>
+        </div>
+
+        <div class="timeline" aria-label="Professional experience">
+          <article><time>2021–2025</time><div><h3>Marketing &amp; Communications Specialist</h3><strong>KPMG Vietnam</strong><p>Social media operations, integrated campaigns, thought-leadership launches, B2B events, PR and global brand governance.</p></div></article>
+          <article><time>2023–2025</time><div><h3>Copywriter &amp; Social Media Strategist</h3><strong>VH Sport · Freelance alongside KPMG</strong><p>Product-led content, launch messaging and platform-native execution across Facebook and TikTok.</p></div></article>
+          <article><time>2020–2021</time><div><h3>PR Coordination Intern</h3><strong>Sen Media</strong><p>Media bookings and advertorial coordination for automotive clients, from brief alignment to publication checks.</p></div></article>
+          <article><time>2019–2020</time><div><h3>Marketing Intern</h3><strong>AdsPlus</strong><p>Communications, PR and media strategy support, digital execution, client reporting and presentations.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">The next conversation</p>
+          <h2>Need a marketer who can connect the story with the system?</h2>
+          <div class="contact-details">
+            <span>Amsterdam, The Netherlands</span>
+            <a href="mailto:linhhtm22@gmail.com">linhhtm22@gmail.com</a>
+            <a href="tel:+31610723198">(+31) 610 72 31 98</a>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a class="button" href="mailto:linhhtm22@gmail.com">Email me <span>↗</span></a>
+          <a class="button" href="https://www.linkedin.com/in/halinh68/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+          <a class="button" href="assets/Linh-Ha-Resume.pdf" download="Thi-My-Linh-Ha-Resume.pdf">Download resume <span>↓</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>Linh</strong><p>Marketing, communications, events and customer insight — shaped in Vietnam, now based in Amsterdam.</p></div>
+      <div class="footer-links"><a href="mailto:linhhtm22@gmail.com">Email</a><a href="https://www.linkedin.com/in/halinh68/" target="_blank" rel="noreferrer">LinkedIn</a><a href="#top">Back to top ↑</a></div>
+    </div>
+  </footer>
+</body>
+</html>
