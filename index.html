@@ -213,7 +213,7 @@
     .proof-grid > * { min-height: 178px; padding: 34px 30px; border-right: 1px solid rgba(255, 255, 255, .13); }
     .proof-grid > :first-child { border-left: 1px solid rgba(255, 255, 255, .13); }
     .proof-intro { display: flex; flex-direction: column; justify-content: space-between; }
-    .proof-intro span { color: var(--yellow); font-size: .68rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    .proof-intro span { color: var(--yellow); font-size: clamp(2.55rem, 4.3vw, 4.8rem); font-weight: 800; letter-spacing: -.075em; line-height: .88; }
     .proof-intro p { max-width: 220px; margin: 0; color: rgba(255, 255, 255, .59); font-size: .8rem; }
     .metric { display: flex; flex-direction: column; justify-content: space-between; }
     .metric strong { font-size: clamp(2.55rem, 4.3vw, 4.8rem); line-height: .88; letter-spacing: -.075em; }
@@ -349,12 +349,12 @@
     .projects-heading > p:last-child { max-width: 690px; margin-bottom: 0; color: var(--muted); font-size: 1.02rem; }
     .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
     .project-card { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid rgba(17, 26, 34, .14); border-radius: 24px; background: var(--paper-bright); box-shadow: 0 22px 54px rgba(36, 78, 199, .09); }
-    .project-visual { position: relative; display: flex; min-height: 205px; align-items: center; justify-content: space-between; gap: 20px; padding: 26px; overflow: hidden; background: var(--project-color, var(--blue)); color: white; }
+    .project-visual { position: relative; display: flex; min-height: 240px; align-items: center; justify-content: space-between; gap: 20px; padding: 26px; overflow: hidden; background: var(--project-color, var(--blue)); color: white; }
     .project-visual::after { position: absolute; right: -48px; bottom: -76px; width: 180px; height: 180px; border: 1px solid rgba(255, 255, 255, .42); border-radius: 50%; content: ""; }
-    .project-theme { position: relative; z-index: 1; display: grid; gap: 14px; align-items: end; }
+    .project-theme { position: relative; z-index: 1; display: grid; flex: 1; min-width: 0; gap: 14px; align-items: end; }
     .project-theme svg { width: 58px; height: 58px; color: rgba(255, 255, 255, .92); }
-    .project-theme span { max-width: 190px; font-size: 1.22rem; font-weight: 850; letter-spacing: -.035em; line-height: 1.05; }
-    .project-visual > strong { position: relative; z-index: 1; align-self: flex-end; font-size: 4.3rem; line-height: .8; letter-spacing: -.1em; }
+    .project-theme span { max-width: 100%; font-size: clamp(2.85rem, 3.2vw, 4.3rem); font-weight: 850; letter-spacing: -.065em; line-height: .88; }
+    .project-visual > strong { position: relative; z-index: 1; flex: 0 0 auto; align-self: flex-end; font-size: clamp(2.85rem, 3.2vw, 4.3rem); line-height: .8; letter-spacing: -.1em; }
     .project-card:nth-child(2) { --project-color: #38604f; }
     .project-card:nth-child(3) { --project-color: #8a3346; }
     .project-body { display: flex; flex: 1; flex-direction: column; padding: 30px; }
@@ -857,7 +857,7 @@
         <div class="contact-actions">
           <a class="button" href="mailto:linhhtm22@gmail.com">Email me <span>↗</span></a>
           <a class="button" href="https://www.linkedin.com/in/halinh68/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
-          <a class="button" href="assets/Linh-Ha-Resume.pdf" download="Thi-My-Linh-Ha-Resume.pdf">Download resume <span>↓</span></a>
+          <a class="button" href="assets/Linh-Portfolio.pdf" download="Linh-Portfolio.pdf">Download portfolio in PDF <span>↓</span></a>
         </div>
       </div>
     </section>
