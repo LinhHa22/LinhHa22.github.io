@@ -340,6 +340,8 @@
     .sport-work-heading .eyebrow { margin-bottom: 9px; color: #cbd5ff; }
     .sport-work-heading h4 { max-width: 620px; margin: 0; font-size: clamp(1.65rem, 2.7vw, 2.45rem); letter-spacing: -.045em; line-height: 1.02; }
     .sport-work-heading > p { margin: 0 0 3px; color: rgba(255, 255, 255, .66); font-size: .72rem; }
+    .sport-channel-label { margin: 28px 0 12px; color: #cbd5ff; font-size: .66rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .sport-channel-label:first-of-type { margin-top: 0; }
     .sport-samples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .sport-sample { min-width: 0; overflow: hidden; border: 1px solid rgba(255, 255, 255, .2); border-radius: 20px; background: var(--paper-bright); color: var(--ink); transition: transform .18s ease, box-shadow .18s ease; }
     .sport-sample:hover { transform: translateY(-4px); box-shadow: 0 22px 46px rgba(30, 5, 12, .3); }
@@ -349,6 +351,13 @@
     .sport-sample-caption span { display: block; margin-bottom: 5px; color: var(--blue); font-size: .62rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
     .sport-sample-caption strong { display: block; font-size: 1.08rem; letter-spacing: -.025em; line-height: 1.25; }
     .sport-sample-caption b { flex: 0 0 auto; color: var(--blue); font-size: .7rem; white-space: nowrap; }
+    .tiktok-samples { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .tiktok-sample figure { position: relative; height: auto; aspect-ratio: 9 / 16; padding: 0; background: #150b0f; }
+    .tiktok-sample figure::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(7, 18, 28, .42)); content: ""; pointer-events: none; }
+    .tiktok-sample img { object-fit: cover; }
+    .tiktok-play { position: absolute; z-index: 2; right: 14px; bottom: 14px; display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(255, 255, 255, .62); border-radius: 50%; background: rgba(255, 255, 255, .9); color: var(--ink-deep); box-shadow: 0 10px 24px rgba(7, 18, 28, .24); font-size: .82rem; }
+    .tiktok-sample .sport-sample-caption { min-height: 152px; align-items: flex-start; flex-direction: column; gap: 13px; }
+    .tiktok-sample .sport-sample-caption b { margin-top: auto; }
 
     .expertise { background: var(--ink-deep); color: white; }
     .expertise-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(70px, 10vw, 150px); }
@@ -434,6 +443,8 @@
       .event-card figure { height: 100%; min-height: 330px; }
       .case-visual { min-height: 500px; }
       .sport-sample figure { height: 360px; }
+      .tiktok-samples { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .tiktok-sample figure { height: auto; }
       .expertise-heading { position: static; }
       .contact-grid { align-items: start; }
       .contact-actions { width: min(100%, 280px); }
@@ -506,6 +517,12 @@
       .sport-samples { grid-template-columns: 1fr; }
       .sport-sample figure { height: auto; aspect-ratio: 1 / 1; padding: 12px; }
       .sport-sample-caption { min-height: 0; padding: 17px; }
+      .tiktok-samples { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .tiktok-sample figure { aspect-ratio: 9 / 16; padding: 0; }
+      .tiktok-sample .sport-sample-caption { min-height: 142px; padding: 13px; }
+      .tiktok-sample .sport-sample-caption span { font-size: .53rem; letter-spacing: .07em; }
+      .tiktok-sample .sport-sample-caption strong { font-size: .9rem; }
+      .tiktok-play { right: 10px; bottom: 10px; width: 36px; height: 36px; }
       .expertise-list article { grid-template-columns: 56px 1fr; gap: 16px; }
       .expertise-list article > span { font-size: 1.3rem; }
       .timeline article { grid-template-columns: 1fr; gap: 8px; }
@@ -755,6 +772,7 @@
                 </div>
                 <p>Click a sample to open the original published content.</p>
               </div>
+              <p class="sport-channel-label">Facebook samples</p>
               <div class="sport-samples" aria-label="VH Sport highlighted work samples">
                 <a class="sport-sample" href="https://www.facebook.com/vhsport.official/posts/pfbid036cbg3dcPM7Y2YQ9eQAmkmL9B9MkgE84W9eoKdAdPSuukp4FXF3XAybvKdLTkj5rPl" target="_blank" rel="noreferrer">
                   <figure><img src="assets/vh-sport-versatile-shorts.svg" alt="VH Sport versatile sports shorts product-benefit carousel"></figure>
@@ -782,6 +800,49 @@
                   <div class="sport-sample-caption">
                     <div><span>Facebook · Collection-launch storytelling</span><strong>Zebra Collection</strong></div>
                     <b>View post ↗</b>
+                  </div>
+                </a>
+              </div>
+              <p class="sport-channel-label">TikTok samples</p>
+              <div class="sport-samples tiktok-samples" aria-label="VH Sport TikTok work samples">
+                <a class="sport-sample tiktok-sample" href="https://www.tiktok.com/@vhsportofficial/video/7350858665336884498" target="_blank" rel="noreferrer">
+                  <figure>
+                    <img src="assets/vh-tiktok-zebra-teaser.svg" alt="VH Sport Zebra Collection teaser video">
+                    <span class="tiktok-play" aria-hidden="true">▶</span>
+                  </figure>
+                  <div class="sport-sample-caption">
+                    <div><span>TikTok · Collection teaser</span><strong>Zebra Collection Teaser</strong></div>
+                    <b>Watch video ↗</b>
+                  </div>
+                </a>
+                <a class="sport-sample tiktok-sample" href="https://www.tiktok.com/@vhsportofficial/video/7323927652111256850" target="_blank" rel="noreferrer">
+                  <figure>
+                    <img src="assets/vh-tiktok-asian-cup-minigame.svg" alt="VH Sport Asian Cup 2023 minigame TikTok cover with football jerseys">
+                    <span class="tiktok-play" aria-hidden="true">▶</span>
+                  </figure>
+                  <div class="sport-sample-caption">
+                    <div><span>TikTok · Community engagement</span><strong>Asian Cup 2023 Minigame</strong></div>
+                    <b>Watch video ↗</b>
+                  </div>
+                </a>
+                <a class="sport-sample tiktok-sample" href="https://www.tiktok.com/@vhsportofficial/video/7413725763498724615" target="_blank" rel="noreferrer">
+                  <figure>
+                    <img src="assets/vh-tiktok-sonic-speed.svg" alt="VH Sport SONIC collection speed-themed TikTok video">
+                    <span class="tiktok-play" aria-hidden="true">▶</span>
+                  </figure>
+                  <div class="sport-sample-caption">
+                    <div><span>TikTok · Product storytelling</span><strong>SONIC: Built for Speed</strong></div>
+                    <b>Watch video ↗</b>
+                  </div>
+                </a>
+                <a class="sport-sample tiktok-sample" href="https://www.tiktok.com/@vhsportofficial/video/7504872585507638546" target="_blank" rel="noreferrer">
+                  <figure>
+                    <img src="assets/vh-tiktok-sonic-pro-after-work.svg" alt="VH Sport SONIC PRO after-work football TikTok video cover">
+                    <span class="tiktok-play" aria-hidden="true">▶</span>
+                  </figure>
+                  <div class="sport-sample-caption">
+                    <div><span>TikTok · Lifestyle storytelling</span><strong>SONIC PRO: After-Work Football</strong></div>
+                    <b>Watch video ↗</b>
                   </div>
                 </a>
               </div>
