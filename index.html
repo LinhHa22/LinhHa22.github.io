@@ -335,6 +335,20 @@
     .sport-metric span { display: block; margin-bottom: 9px; color: #cbd5ff; font-size: .66rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
     .sport-metric strong { display: block; margin-bottom: 8px; font-size: clamp(4rem, 7vw, 6.6rem); line-height: .82; letter-spacing: -.085em; }
     .sport-metric p { margin: 0; color: rgba(255, 255, 255, .72); font-size: .78rem; }
+    .sport-work { padding: 0 clamp(34px, 5vw, 64px) clamp(34px, 5vw, 64px); background: #531724; }
+    .sport-work-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; margin-bottom: 20px; padding-top: 34px; border-top: 1px solid rgba(255, 255, 255, .2); }
+    .sport-work-heading .eyebrow { margin-bottom: 9px; color: #cbd5ff; }
+    .sport-work-heading h4 { max-width: 620px; margin: 0; font-size: clamp(1.65rem, 2.7vw, 2.45rem); letter-spacing: -.045em; line-height: 1.02; }
+    .sport-work-heading > p { margin: 0 0 3px; color: rgba(255, 255, 255, .66); font-size: .72rem; }
+    .sport-samples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .sport-sample { min-width: 0; overflow: hidden; border: 1px solid rgba(255, 255, 255, .2); border-radius: 20px; background: var(--paper-bright); color: var(--ink); transition: transform .18s ease, box-shadow .18s ease; }
+    .sport-sample:hover { transform: translateY(-4px); box-shadow: 0 22px 46px rgba(30, 5, 12, .3); }
+    .sport-sample figure { display: grid; height: 430px; margin: 0; padding: 18px; place-items: center; overflow: hidden; background: #eeeae4; }
+    .sport-sample img { width: 100%; height: 100%; object-fit: contain; }
+    .sport-sample-caption { display: flex; min-height: 102px; align-items: center; justify-content: space-between; gap: 22px; padding: 20px 22px; border-top: 1px solid var(--line); }
+    .sport-sample-caption span { display: block; margin-bottom: 5px; color: var(--blue); font-size: .62rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .sport-sample-caption strong { display: block; font-size: 1.08rem; letter-spacing: -.025em; line-height: 1.25; }
+    .sport-sample-caption b { flex: 0 0 auto; color: var(--blue); font-size: .7rem; white-space: nowrap; }
 
     .expertise { background: var(--ink-deep); color: white; }
     .expertise-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(70px, 10vw, 150px); }
@@ -419,6 +433,7 @@
       .event-card { display: grid; grid-template-columns: minmax(240px, .8fr) minmax(0, 1.2fr); }
       .event-card figure { height: 100%; min-height: 330px; }
       .case-visual { min-height: 500px; }
+      .sport-sample figure { height: 360px; }
       .expertise-heading { position: static; }
       .contact-grid { align-items: start; }
       .contact-actions { width: min(100%, 280px); }
@@ -486,6 +501,11 @@
       .event-card { display: flex; }
       .event-card figure { min-height: 230px; }
       .event-metrics { grid-template-columns: repeat(3, 1fr); }
+      .sport-work { padding: 0 22px 32px; }
+      .sport-work-heading { grid-template-columns: 1fr; gap: 8px; padding-top: 28px; }
+      .sport-samples { grid-template-columns: 1fr; }
+      .sport-sample figure { height: auto; aspect-ratio: 1 / 1; padding: 12px; }
+      .sport-sample-caption { min-height: 0; padding: 17px; }
       .expertise-list article { grid-template-columns: 56px 1fr; gap: 16px; }
       .expertise-list article > span { font-size: 1.3rem; }
       .timeline article { grid-template-columns: 1fr; gap: 8px; }
@@ -725,6 +745,31 @@
                   <div class="sport-metric"><span>Facebook growth</span><strong>+270%</strong><p>Clearer product benefits and a repeatable launch cadence.</p></div>
                   <div class="sport-metric"><span>TikTok growth</span><strong>4K+</strong><p>Followers built from zero within 12 months.</p></div>
                 </div>
+              </div>
+            </div>
+            <div class="sport-work">
+              <div class="sport-work-heading">
+                <div>
+                  <p class="eyebrow">Selected Facebook work</p>
+                  <h4>Product stories built around use and design.</h4>
+                </div>
+                <p>Click a sample to open the original published post.</p>
+              </div>
+              <div class="sport-samples" aria-label="VH Sport Facebook work samples">
+                <a class="sport-sample" href="https://www.facebook.com/vhsport.official/posts/pfbid036cbg3dcPM7Y2YQ9eQAmkmL9B9MkgE84W9eoKdAdPSuukp4FXF3XAybvKdLTkj5rPl" target="_blank" rel="noreferrer">
+                  <figure><img src="assets/vh-sport-versatile-shorts.svg" alt="VH Sport versatile sports shorts product-benefit carousel"></figure>
+                  <div class="sport-sample-caption">
+                    <div><span>Facebook · Product-benefit storytelling</span><strong>Versatile Sports Shorts</strong></div>
+                    <b>View post ↗</b>
+                  </div>
+                </a>
+                <a class="sport-sample" href="https://www.facebook.com/vhsport.official/posts/pfbid02sgsTf5iUFNjLC6K6JYtpwMX3ohzzvpL819RJeAjTd6JHaZQcBfsERdS2Ebggi6Chl" target="_blank" rel="noreferrer">
+                  <figure><img src="assets/vh-sport-sonic.svg" alt="VH Sport SONIC Collection detail-led product carousel"></figure>
+                  <div class="sport-sample-caption">
+                    <div><span>Facebook · Collection storytelling</span><strong>SONIC Collection</strong></div>
+                    <b>View post ↗</b>
+                  </div>
+                </a>
               </div>
             </div>
           </article>
