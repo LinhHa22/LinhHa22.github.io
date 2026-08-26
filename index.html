@@ -386,6 +386,8 @@
     .timeline time { color: var(--blue); font-size: .7rem; font-weight: 800; }
     .timeline h3 { margin-bottom: 5px; font-size: 1.4rem; letter-spacing: -.035em; line-height: 1.1; }
     .timeline strong { display: block; margin-bottom: 7px; font-size: .77rem; }
+    .timeline strong a { text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .18em; }
+    .timeline strong a:hover, .timeline strong a:focus-visible { color: var(--blue); }
     .timeline p { margin: 0; color: var(--muted); font-size: .82rem; }
     .education-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 50px; }
     .education-strip article { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
@@ -695,7 +697,7 @@
             </div>
           </article>
 
-          <article class="case sport-case">
+          <article class="case sport-case" id="vh-sport">
             <div class="case-grid">
               <div class="case-copy">
                 <span class="case-number">Case 04 · VH Sport</span>
@@ -906,9 +908,9 @@
 
         <div class="timeline" aria-label="Professional experience">
           <article><time>2021–2025</time><div><h3>Marketing &amp; Communications Specialist</h3><strong>KPMG Vietnam</strong><p>Social media operations, integrated campaigns, thought-leadership launches, B2B events, PR and global brand governance.</p></div></article>
-          <article><time>2023–2025</time><div><h3>Copywriter &amp; Social Media Strategist</h3><strong>VH Sport · Freelance alongside KPMG</strong><p>Product-led content, launch messaging and platform-native execution across Facebook and TikTok.</p></div></article>
-          <article><time>2020–2021</time><div><h3>PR Coordination Intern</h3><strong>Sen Media</strong><p>Media bookings and advertorial coordination for automotive clients, from brief alignment to publication checks.</p></div></article>
-          <article><time>2019–2020</time><div><h3>Marketing Intern</h3><strong>AdsPlus</strong><p>Communications, PR and media strategy support, digital execution, client reporting and presentations.</p></div></article>
+          <article><time>2023–2025</time><div><h3>Copywriter &amp; Social Media Strategist</h3><strong><a href="#vh-sport">VH Sport</a> (freelance, sportswear brand)</strong><p>Product-led content, launch messaging and platform-native execution across Facebook and TikTok.</p></div></article>
+          <article><time>2020–2021</time><div><h3>PR Coordination Intern</h3><strong>Sen Media (PR &amp; media agency)</strong><p>Media bookings and advertorial coordination for automotive clients, from brief alignment to publication checks.</p></div></article>
+          <article><time>2019–2020</time><div><h3>Marketing Intern</h3><strong>AdsPlus (digital advertising agency)</strong><p>Communications, PR and media strategy support, digital execution, client reporting and presentations.</p></div></article>
         </div>
       </div>
     </section>
