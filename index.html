@@ -940,8 +940,38 @@
       <div class="footer-links"><a href="mailto:linhhtm22@gmail.com">Email</a><a href="https://www.linkedin.com/in/halinh68/" target="_blank" rel="noreferrer">LinkedIn</a><a href="#top">Back to top ↑</a></div>
     </div>
   </footer>
-  <!-- Cloudflare Web Analytics -->
-  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"ef9eca58fc52472c88afa6b7aff94f89"}'></script>
+  <!-- Cloudflare Web Analytics with browser-local owner opt-out -->
+  <script>
+    (() => {
+      const storageKey = "linh-portfolio-owner-analytics-opt-out";
+      const hashCommand = new URLSearchParams(window.location.hash.slice(1)).get("analytics");
+      let ownerOptedOut = false;
+
+      try {
+        if (hashCommand === "owner-off-6f4d9b28") {
+          window.localStorage.setItem(storageKey, "1");
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        } else if (hashCommand === "owner-on-6f4d9b28") {
+          window.localStorage.removeItem(storageKey);
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+
+        ownerOptedOut = window.localStorage.getItem(storageKey) === "1";
+      } catch (error) {
+        ownerOptedOut = false;
+      }
+
+      if (ownerOptedOut) return;
+
+      const beacon = document.createElement("script");
+      beacon.type = "module";
+      beacon.src = "https://static.cloudflareinsights.com/beacon.min.js";
+      beacon.dataset.cfBeacon = JSON.stringify({
+        token: "ef9eca58fc52472c88afa6b7aff94f89"
+      });
+      document.body.appendChild(beacon);
+    })();
+  </script>
   <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
