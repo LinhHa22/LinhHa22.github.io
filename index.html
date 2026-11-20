@@ -136,7 +136,7 @@
       display: block;
     }
     .hero-copy { max-width: 1000px; }
-    .hero h1 { max-width: 940px; margin-bottom: 30px; color: var(--ink-deep); }
+    .hero h1 { max-width: 20ch; text-wrap: balance; margin-bottom: 30px; color: var(--ink-deep); }
     .hero h1 span { color: var(--blue); }
     .hero-lede { max-width: 780px; margin-bottom: 34px; color: var(--muted); font-size: clamp(1.08rem, 1.6vw, 1.28rem); }
     .button-row { display: flex; flex-wrap: wrap; gap: 11px; }
@@ -266,6 +266,10 @@
     .insight-metrics span { display: block; color: var(--muted); font-size: .65rem; line-height: 1.35; }
     .insight-posm { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); }
     .insight-posm > span { display: block; margin-bottom: 10px; color: var(--ink); font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .channel-comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: 1.25rem; margin: 1.25rem 0; }
+    .channel-comparison > div { padding-top: .75rem; border-top: 1px solid var(--line); }
+    .channel-comparison a { color: var(--blue); font-weight: 700; text-decoration: underline; text-underline-offset: .18em; }
+    .channel-comparison p { margin: .5rem 0 0; font-size: .9rem; }
     .insight-links { display: flex; flex-wrap: wrap; gap: 7px; }
     .insight-links a { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--blue); font-size: .63rem; font-weight: 750; }
     .insight-links a:hover { border-color: var(--blue); background: var(--blue); color: white; }
@@ -295,6 +299,7 @@
     .event-role span { display: block; color: rgba(255, 255, 255, .67); font-size: .72rem; line-height: 1.5; }
 
     @media (min-width: 901px) {
+      .social-intro { align-items: baseline; }
       .section-heading { max-width: none; }
       .section-heading h2 { max-width: none; white-space: nowrap; }
       .insight-body > p { min-height: 5.25em; }
@@ -322,6 +327,11 @@
     .sport-work-heading h4 { max-width: 620px; margin: 0; font-size: clamp(1.65rem, 2.7vw, 2.45rem); letter-spacing: -.045em; line-height: 1.02; }
     .sport-work-heading h4 .keep-together { white-space: nowrap; }
     .sport-work-heading > p { margin: 0 0 3px; color: rgba(255, 255, 255, .66); font-size: .72rem; }
+    .sonic-comparison h5 { margin: 1.75rem 0 .5rem; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; }
+    .sonic-comparison > p { max-width: 65ch; margin-bottom: 1.25rem; }
+    .sonic-comparison .sport-sample figure { height: clamp(14rem, 26vw, 22rem); aspect-ratio: auto; }
+    .sonic-comparison .sport-sample-caption { align-items: start; }
+    .sonic-comparison .sport-sample-caption p { margin: .5rem 0 0; font-size: .9rem; }
     .sport-channel-label { margin: 28px 0 12px; color: #cbd5ff; font-size: .66rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
     .sport-channel-label:first-of-type { margin-top: 0; }
     .sport-samples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
@@ -517,12 +527,13 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Marketing, Communications &amp; Events Specialist · Netherlands</p>
-          <h1>I turn complex expertise into marketing people understand<span> — and act on.</span></h1>
-          <p class="hero-lede">I&apos;m Linh, a marketing and communications specialist with 5 years of experience across social media operations, integrated campaigns and B2B event delivery. I turn complex topics into clear content, then coordinate the calendars, stakeholders, approvals and reporting that move the work from brief to launch.</p>
-          <div class="button-row">
-            <a class="button button-primary" href="#work">Explore work highlights <span>↓</span></a>
-            <a class="button button-secondary" href="https://www.linkedin.com/in/halinh68/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
-          </div>
+          <h1>B2B campaigns, events and <span>social content</span></h1>
+          <p class="hero-lede">I’m Linh, a marketing communications specialist with five years of experience, including four at KPMG Vietnam. I led the promotion of an electric vehicle industry report, helped deliver a multi-city conference for finance leaders, and built a publishing workflow for content from KPMG’s specialists.</p>
+          <nav class="button-row" aria-label="Explore work by role">
+            <a class="button button-primary" href="#ev-report">Explore B2B campaigns</a>
+            <a class="button button-secondary" href="#tax-legal-institute">Explore events</a>
+            <a class="button button-secondary" href="#sonic">Explore social content</a>
+          </nav>
           <div class="availability"><span class="status-dot" aria-hidden="true"></span>Based in the Netherlands · Available now · Full NL work authorization</div>
           <div class="hero-snapshot">
             <div class="hero-market"><span>Built across</span><strong>B2B + B2C</strong></div>
@@ -554,11 +565,11 @@
         </div>
 
         <div class="case-stack">
-          <article class="case social-case">
+          <article class="case social-case" id="kpmg-social">
+            <span class="case-number">Case 01 · KPMG Vietnam</span>
+            <p class="eyebrow">Social media &amp; brand operations</p>
             <div class="social-intro">
               <div>
-                <span class="case-number">Case 01 · KPMG Vietnam</span>
-                <p class="eyebrow">Social media &amp; brand operations</p>
                 <h3>Building the system behind sustained audience growth.</h3>
                 <p class="case-lede">The challenge was not simply to publish more. Multiple service lines, technical subject matter and global brand standards needed one reliable operating rhythm.</p>
               </div>
@@ -604,6 +615,35 @@
 
             <div class="insights-grid">
               <article class="insight-card">
+                <div class="insight-visual ev-report"><div class="ev-report-crop"><img src="assets/ev-report.webp" alt="KPMG Electric Vehicle Report 2024 launch social post"></div></div>
+                <div class="insight-body" id="ev-report">
+                  <p class="eyebrow">Thought-leadership launch</p>
+                  <h4>Electric Vehicle Report 2024</h4>
+                  <p>Led the promotional workstream for KPMG&apos;s 2024 Electric Vehicle Report across website, email, social media, PR and a live launch, adapting specialist input for automotive-industry audiences while keeping the message consistent across channels.</p>
+                  <div class="insight-metrics three">
+                    <div><strong>600+</strong><span>report downloads</span></div>
+                    <div><strong>80+</strong><span>industry leaders at launch</span></div>
+                    <div><strong>3</strong><span>business interactions after promotion</span></div>
+                  </div>
+                  <div class="channel-comparison" aria-label="EV report email and social examples">
+                    <div>
+                      <strong>Client email</strong>
+                      <p>For automotive clients, I introduced the research behind the report and explained why it mattered to businesses following Vietnam’s EV market.</p>
+                    </div>
+                    <div>
+                      <a href="https://www.facebook.com/100064332713122/posts/pfbid02MfguU3bdeqGsGLRswRrq4RTpFSbKj3SeBRXUwwGoJB1RbsWJUMjZkdFjM3gEBM85l/" target="_blank" rel="noreferrer">View the Facebook post</a>
+                      <p>On Facebook, I opened with a question about buying and selling EVs, then invited readers to the launch luncheon for early access to the findings.</p>
+                    </div>
+                  </div>
+                  <div class="insight-posm"><span>Launch assets</span><div class="insight-links">
+                    <a href="https://kpmg.com/vn/en/home/insights/2024/07/the-ev-landscape-in-vietnam.html" target="_blank" rel="noreferrer">Website ↗</a>
+                    <a href="https://drive.google.com/drive/folders/1kCCJFZzXprMDl7rnqYyfS2_zR5pGNHCG" target="_blank" rel="noreferrer">Email marketing ↗</a>
+                    <a href="https://docs.google.com/document/d/1NRYWnOMaiYNWQcGQPP51H49A03NMixrz/edit" target="_blank" rel="noreferrer">Press release ↗</a>
+                  </div></div>
+                </div>
+              </article>
+
+              <article class="insight-card">
                 <div class="insight-visual make-difference"><img src="assets/make-the-difference.webp" alt="KPMG Make the Difference campaign podcast displayed across digital devices"></div>
                 <div class="insight-body">
                   <p class="eyebrow">Global campaign localization</p>
@@ -619,26 +659,6 @@
                     <a href="https://youtu.be/W6Gqz2wJAEI?si=uxEkmkcTbISSuzMK" target="_blank" rel="noreferrer">Podcast ↗</a>
                     <a href="https://www.linkedin.com/posts/kpmg-viet-nam_kpmg-kpmginvietnam-makethedifference-activity-7090903773153280000-O2Dd/" target="_blank" rel="noreferrer">LinkedIn article ↗</a>
                     <a href="https://m.facebook.com/story.php?story_fbid=pfbid07oFNdekzZ38KLZjHZkGUzhHRCn7qwzEUaa1u6ud2NRF8Fs9SqqW7ZsG1244SwNQDl&amp;id=100064332713122" target="_blank" rel="noreferrer">Facebook reel ↗</a>
-                  </div></div>
-                </div>
-              </article>
-
-              <article class="insight-card">
-                <div class="insight-visual ev-report"><div class="ev-report-crop"><img src="assets/ev-report.webp" alt="KPMG Electric Vehicle Report 2024 launch social post"></div></div>
-                <div class="insight-body">
-                  <p class="eyebrow">Thought-leadership launch</p>
-                  <h4>Electric Vehicle Report 2024</h4>
-                  <p>Led the promotional workstream for KPMG&apos;s 2024 Electric Vehicle Report across website, email, social media, PR and a live launch, adapting specialist input for automotive-industry audiences while keeping the message consistent across channels.</p>
-                  <div class="insight-metrics three">
-                    <div><strong>600+</strong><span>report downloads</span></div>
-                    <div><strong>80+</strong><span>industry leaders at launch</span></div>
-                    <div><strong>3</strong><span>business interactions after promotion</span></div>
-                  </div>
-                  <div class="insight-posm"><span>Launch assets</span><div class="insight-links">
-                    <a href="https://kpmg.com/vn/en/home/insights/2024/07/the-ev-landscape-in-vietnam.html" target="_blank" rel="noreferrer">Website ↗</a>
-                    <a href="https://drive.google.com/drive/folders/1kCCJFZzXprMDl7rnqYyfS2_zR5pGNHCG" target="_blank" rel="noreferrer">Email marketing ↗</a>
-                    <a href="https://docs.google.com/document/d/1NRYWnOMaiYNWQcGQPP51H49A03NMixrz/edit" target="_blank" rel="noreferrer">Press release ↗</a>
-                    <a href="https://www.facebook.com/100064332713122/posts/pfbid02MfguU3bdeqGsGLRswRrq4RTpFSbKj3SeBRXUwwGoJB1RbsWJUMjZkdFjM3gEBM85l/" target="_blank" rel="noreferrer">Social-media post ↗</a>
                   </div></div>
                 </div>
               </article>
@@ -660,14 +680,14 @@
                 <figure><img src="assets/event-stage.webp" alt="KPMG Tax and Legal Institute conference stage"></figure>
                 <div class="event-card-body">
                   <span class="event-type">Flagship multi-city forum</span>
-                  <h4>Tax &amp; Legal Institute</h4>
-                  <p>A recurring multilingual program for senior finance and corporate leaders across Vietnam.</p>
+                  <h4 id="tax-legal-institute">Tax &amp; Legal Institute</h4>
+                  <p>A recurring multilingual conference for senior finance and corporate leaders in Vietnam. When a session ran over, I worked with the MC, stage and AV teams to adjust the running order and keep the rest of the program on track.</p>
                   <div class="event-metrics">
                     <div><strong>1,500+</strong><span>attendees per cycle</span></div>
                     <div><strong>~70%</strong><span>C-suite audience</span></div>
-                    <div><strong>94%</strong><span>overall satisfaction</span></div>
+                    <div><strong>94%</strong><span>overall satisfaction in 2024</span></div>
                   </div>
-                  <div class="event-role"><b>My contribution</b><span>Co-coordinated delegate communications and registration, speaker materials, supplier and AV briefings, partner activations, travel logistics, on-site delivery and attendee-feedback reporting; contributed to event budget planning.</span></div>
+                  <div class="event-role"><b>My contribution</b><span>As part of the organizing team, I coordinated invitations, registration, speaker materials and supplier briefings. I also handled partner activations and travel logistics, contributed to budget planning and reported on attendee feedback.</span></div>
                 </div>
               </article>
 
@@ -715,7 +735,7 @@
               <div class="case-visual sport-visual">
                 <div class="sport-metrics" aria-label="VH Sport channel growth">
                   <div class="sport-metric"><span>Facebook growth</span><strong>+270%</strong><p>Clearer product benefits and a repeatable launch cadence.</p></div>
-                  <div class="sport-metric"><span>TikTok growth</span><strong>4K+</strong><p>Followers built from zero within 5 months.</p></div>
+                  <div class="sport-metric"><span>TikTok growth</span><strong>4K+</strong><p>Organic followers, up from zero.</p></div>
                 </div>
               </div>
             </div>
@@ -727,19 +747,34 @@
                 </div>
                 <p>Click a sample to open the original published content.</p>
               </div>
-              <p class="sport-channel-label">Facebook samples</p>
+              <section class="sonic-comparison" aria-labelledby="sonic">
+                <h5 id="sonic">SONIC on Facebook and TikTok</h5>
+                <p>I wrote the Facebook copy and developed the short-form hook for TikTok. Both introduced the same VH Sport range to people buying sportswear.</p>
+                <div class="sport-samples">
+                <a class="sport-sample" href="https://www.facebook.com/vhsport.official/posts/pfbid02sgsTf5iUFNjLC6K6JYtpwMX3ohzzvpL819RJeAjTd6JHaZQcBfsERdS2Ebggi6Chl" target="_blank" rel="noreferrer">
+                  <figure><img src="assets/vh-sport-sonic.svg" alt="VH Sport SONIC Collection detail-led product carousel"></figure>
+                  <div class="sport-sample-caption">
+                    <div><span>Facebook · Collection storytelling</span><strong>SONIC Collection</strong><p>For shoppers comparing the range, the carousel gives each design detail its own frame.</p></div>
+                    <b>View post ↗</b>
+                  </div>
+                </a>
+                <a class="sport-sample" href="https://www.tiktok.com/@vhsportofficial/video/7413725763498724615" target="_blank" rel="noreferrer">
+                  <figure>
+                    <img src="assets/vh-tiktok-sonic-speed.svg" alt="VH Sport SONIC collection speed-themed TikTok video">
+                  </figure>
+                  <div class="sport-sample-caption">
+                    <div><span>TikTok · Product storytelling</span><strong>SONIC: Built for Speed</strong><p>For viewers scrolling through their feed, speed gives the video one idea to lead with.</p></div>
+                    <b>Watch video ↗</b>
+                  </div>
+                </a>
+                </div>
+              </section>
+              <p class="sport-channel-label">More Facebook samples</p>
               <div class="sport-samples" aria-label="VH Sport highlighted work samples">
                 <a class="sport-sample" href="https://www.facebook.com/vhsport.official/posts/pfbid036cbg3dcPM7Y2YQ9eQAmkmL9B9MkgE84W9eoKdAdPSuukp4FXF3XAybvKdLTkj5rPl" target="_blank" rel="noreferrer">
                   <figure><img src="assets/vh-sport-versatile-shorts.svg" alt="VH Sport versatile sports shorts product-benefit carousel"></figure>
                   <div class="sport-sample-caption">
                     <div><span>Facebook · Product-benefit storytelling</span><strong>Versatile Sports Shorts</strong></div>
-                    <b>View post ↗</b>
-                  </div>
-                </a>
-                <a class="sport-sample" href="https://www.facebook.com/vhsport.official/posts/pfbid02sgsTf5iUFNjLC6K6JYtpwMX3ohzzvpL819RJeAjTd6JHaZQcBfsERdS2Ebggi6Chl" target="_blank" rel="noreferrer">
-                  <figure><img src="assets/vh-sport-sonic.svg" alt="VH Sport SONIC Collection detail-led product carousel"></figure>
-                  <div class="sport-sample-caption">
-                    <div><span>Facebook · Collection storytelling</span><strong>SONIC Collection</strong></div>
                     <b>View post ↗</b>
                   </div>
                 </a>
@@ -758,7 +793,7 @@
                   </div>
                 </a>
               </div>
-              <p class="sport-channel-label">TikTok samples</p>
+              <p class="sport-channel-label">More TikTok samples</p>
               <div class="sport-samples tiktok-samples" aria-label="VH Sport TikTok work samples">
                 <a class="sport-sample tiktok-sample" href="https://www.tiktok.com/@vhsportofficial/video/7350858665336884498" target="_blank" rel="noreferrer">
                   <figure>
@@ -777,16 +812,6 @@
                   </figure>
                   <div class="sport-sample-caption">
                     <div><span>TikTok · Community engagement</span><strong>Asian Cup 2023 Minigame</strong></div>
-                    <b>Watch video ↗</b>
-                  </div>
-                </a>
-                <a class="sport-sample tiktok-sample" href="https://www.tiktok.com/@vhsportofficial/video/7413725763498724615" target="_blank" rel="noreferrer">
-                  <figure>
-                    <img src="assets/vh-tiktok-sonic-speed.svg" alt="VH Sport SONIC collection speed-themed TikTok video">
-                    <span class="tiktok-play" aria-hidden="true">▶</span>
-                  </figure>
-                  <div class="sport-sample-caption">
-                    <div><span>TikTok · Product storytelling</span><strong>SONIC: Built for Speed</strong></div>
                     <b>Watch video ↗</b>
                   </div>
                 </a>
@@ -843,10 +868,10 @@
               <div class="project-meta">Feb 2026 – Mar 2026</div>
               <h3 class="project-name">Vue Cinemas — Loyalty Strategy Proposal</h3>
               <p><strong>Problem:</strong> Vue Cinemas, a challenger cinema brand in the Netherlands, wanted to build genuine customer loyalty rather than relying on customers who simply had no other nearby cinema to choose from.</p>
-              <p><strong>Approach:</strong> Designed and ran a survey (84 respondents) on cinema choice and booking behavior, then analyzed the relationship between Vue&apos;s Movie Pass membership, visit frequency and spend.</p>
-              <p class="project-result"><b>Recommendation:</b> Found location, not the loyalty program, as the #1 driver of cinema choice (quality was #2). Movie Pass membership was associated with higher visit frequency, but not higher spend, leading to a recommendation for a location-segmented loyalty strategy over a blanket keep-or-drop decision.</p>
+              <p><strong>Approach:</strong> Designed and ran a survey (84 respondents) on cinema choice and booking behavior, then compared Movie Pass members and other respondents on visit frequency and willingness to pay.</p>
+              <p class="project-result"><b>Recommendation:</b> Found location, not the loyalty program, as the #1 driver of cinema choice (quality was #2). Movie Pass members visited more often. We found no significant difference in willingness to pay and recommended tailoring the loyalty offer to each cinema’s local competition.</p>
               <div class="project-footer">
-                <div class="skill-tags"><span>Survey</span><span>Design</span><span>Market Research</span><span>A/B Testing</span><span>Brand Strategy</span></div>
+                <div class="skill-tags"><span>Survey Design</span><span>Market Research</span><span>Survey Analysis</span><span>Brand Strategy</span></div>
                 <div class="project-actions"><a class="project-link" href="https://drive.google.com/file/d/10YOF698C1tiNo9hbBhPErJqssS2NLoQ5/view?usp=share_link" target="_blank" rel="noreferrer">View presentation slides <span>↗</span></a></div>
               </div>
             </div>
