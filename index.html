@@ -226,6 +226,8 @@
     .social-case { padding: clamp(44px, 6vw, 76px); }
     .social-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .72fr); gap: clamp(42px, 8vw, 105px); align-items: start; margin-bottom: 46px; }
     .social-intro h3 { max-width: 690px; }
+    .social-case-links { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 18px; font-size: .875rem; }
+    .social-case-links a { text-decoration: underline; text-underline-offset: .2em; }
     .social-intro .case-lede { margin-bottom: 0; }
     .social-summary .case-facts { margin-top: 0; }
     .social-summary .case-facts strong { margin-bottom: 8px; color: var(--blue); font-size: clamp(2.6rem, 4.2vw, 4rem); line-height: .86; letter-spacing: -.075em; }
@@ -570,7 +572,11 @@
             <p class="eyebrow">Social media &amp; brand operations</p>
             <div class="social-intro">
               <div>
-                <h3>Building the system behind sustained audience growth.</h3>
+                <h3 id="social-content">Building the system behind sustained audience growth.</h3>
+                <nav class="social-case-links" aria-label="Social content case studies">
+                  <strong aria-current="location">KPMG Vietnam · LinkedIn &amp; Facebook</strong>
+                  <a href="#vh-sport-social">VH Sport · Facebook &amp; TikTok</a>
+                </nav>
                 <p class="case-lede">The challenge was not simply to publish more. Multiple service lines, technical subject matter and global brand standards needed one reliable operating rhythm.</p>
               </div>
               <div class="social-summary">
@@ -724,7 +730,11 @@
               <div class="case-copy">
                 <span class="case-number">Case 04 · VH Sport</span>
                 <p class="eyebrow">Consumer social &amp; brand building</p>
-                <h3 id="social-content">Giving a growing sportswear brand a stronger social rhythm.</h3>
+                <h3 id="vh-sport-social">Giving a growing sportswear brand a stronger social rhythm.</h3>
+                <nav class="social-case-links" aria-label="Social content case studies">
+                  <a href="#social-content">KPMG Vietnam · LinkedIn &amp; Facebook</a>
+                  <strong aria-current="location">VH Sport · Facebook &amp; TikTok</strong>
+                </nav>
                 <p class="case-lede">Alongside my full-time KPMG role, I helped turn product information into clearer benefits, stronger hooks and a repeatable launch cadence across Facebook and TikTok. Across both channels, the strategy prioritized platform-native growth.</p>
                 <ul class="decision-list">
                   <li>Connected product benefits with audience motivations, use cases and lifestyle relevance.</li>
