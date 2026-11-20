@@ -329,11 +329,7 @@
     .sport-work-heading h4 { max-width: 620px; margin: 0; font-size: clamp(1.65rem, 2.7vw, 2.45rem); letter-spacing: -.045em; line-height: 1.02; }
     .sport-work-heading h4 .keep-together { white-space: nowrap; }
     .sport-work-heading > p { margin: 0 0 3px; color: rgba(255, 255, 255, .66); font-size: .72rem; }
-    .sonic-comparison h5 { margin: 1.75rem 0 .5rem; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; }
-    .sonic-comparison > p { max-width: 65ch; margin-bottom: 1.25rem; }
-    .sonic-comparison .sport-sample figure { height: clamp(14rem, 26vw, 22rem); aspect-ratio: auto; }
-    .sonic-comparison .sport-sample-caption { align-items: start; }
-    .sonic-comparison .sport-sample-caption p { margin: .5rem 0 0; font-size: .9rem; }
+    .sport-sample-caption p { margin: .5rem 0 0; font-size: .9rem; }
     .sport-channel-label { margin: 28px 0 12px; color: #cbd5ff; font-size: .66rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
     .sport-channel-label:first-of-type { margin-top: 0; }
     .sport-samples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
@@ -350,7 +346,8 @@
     .tiktok-sample figure::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(7, 18, 28, .42)); content: ""; pointer-events: none; }
     .tiktok-sample img { object-fit: cover; }
     .tiktok-play { position: absolute; z-index: 2; right: 14px; bottom: 14px; display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(255, 255, 255, .62); border-radius: 50%; background: rgba(255, 255, 255, .9); color: var(--ink-deep); box-shadow: 0 10px 24px rgba(7, 18, 28, .24); font-size: .82rem; }
-    .tiktok-sample .sport-sample-caption { min-height: 152px; align-items: flex-start; flex-direction: column; gap: 13px; }
+    .tiktok-sample { display: flex; flex-direction: column; }
+    .tiktok-sample .sport-sample-caption { flex: 1; min-height: 152px; align-items: flex-start; flex-direction: column; gap: 13px; }
     .tiktok-sample .sport-sample-caption b { margin-top: auto; }
 
     .expertise { background: var(--ink-deep); color: white; }
@@ -757,30 +754,15 @@
                 </div>
                 <p>Click a sample to open the original published content.</p>
               </div>
-              <section class="sonic-comparison" aria-labelledby="sonic">
-                <h5 id="sonic">SONIC on Facebook and TikTok</h5>
-                <p>I wrote the Facebook copy and developed the short-form hook for TikTok. Both introduced the same VH Sport range to people buying sportswear.</p>
-                <div class="sport-samples">
-                <a class="sport-sample" href="https://www.facebook.com/vhsport.official/posts/pfbid02sgsTf5iUFNjLC6K6JYtpwMX3ohzzvpL819RJeAjTd6JHaZQcBfsERdS2Ebggi6Chl" target="_blank" rel="noreferrer">
+              <p class="sport-channel-label">Facebook samples</p>
+              <div class="sport-samples" aria-label="VH Sport highlighted work samples">
+                <a id="sonic" class="sport-sample" href="https://www.facebook.com/vhsport.official/posts/pfbid02sgsTf5iUFNjLC6K6JYtpwMX3ohzzvpL819RJeAjTd6JHaZQcBfsERdS2Ebggi6Chl" target="_blank" rel="noreferrer">
                   <figure><img src="assets/vh-sport-sonic.svg" alt="VH Sport SONIC Collection detail-led product carousel"></figure>
                   <div class="sport-sample-caption">
-                    <div><span>Facebook · Collection storytelling</span><strong>SONIC Collection</strong><p>For shoppers comparing the range, the carousel gives each design detail its own frame.</p></div>
+                    <div><span>Facebook · Collection storytelling</span><strong>SONIC Collection</strong><p>I wrote the Facebook copy for shoppers comparing the SONIC range. The carousel gives each design detail its own frame.</p></div>
                     <b>View post ↗</b>
                   </div>
                 </a>
-                <a class="sport-sample" href="https://www.tiktok.com/@vhsportofficial/video/7413725763498724615" target="_blank" rel="noreferrer">
-                  <figure>
-                    <img src="assets/vh-tiktok-sonic-speed.svg" alt="VH Sport SONIC collection speed-themed TikTok video">
-                  </figure>
-                  <div class="sport-sample-caption">
-                    <div><span>TikTok · Product storytelling</span><strong>SONIC: Built for Speed</strong><p>For viewers scrolling through their feed, speed gives the video one idea to lead with.</p></div>
-                    <b>Watch video ↗</b>
-                  </div>
-                </a>
-                </div>
-              </section>
-              <p class="sport-channel-label">More Facebook samples</p>
-              <div class="sport-samples" aria-label="VH Sport highlighted work samples">
                 <a class="sport-sample" href="https://www.facebook.com/vhsport.official/posts/pfbid036cbg3dcPM7Y2YQ9eQAmkmL9B9MkgE84W9eoKdAdPSuukp4FXF3XAybvKdLTkj5rPl" target="_blank" rel="noreferrer">
                   <figure><img src="assets/vh-sport-versatile-shorts.svg" alt="VH Sport versatile sports shorts product-benefit carousel"></figure>
                   <div class="sport-sample-caption">
@@ -803,7 +785,7 @@
                   </div>
                 </a>
               </div>
-              <p class="sport-channel-label">More TikTok samples</p>
+              <p class="sport-channel-label">TikTok samples</p>
               <div class="sport-samples tiktok-samples" aria-label="VH Sport TikTok work samples">
                 <a class="sport-sample tiktok-sample" href="https://www.tiktok.com/@vhsportofficial/video/7350858665336884498" target="_blank" rel="noreferrer">
                   <figure>
@@ -822,6 +804,16 @@
                   </figure>
                   <div class="sport-sample-caption">
                     <div><span>TikTok · Community engagement</span><strong>Asian Cup 2023 Minigame</strong></div>
+                    <b>Watch video ↗</b>
+                  </div>
+                </a>
+                <a class="sport-sample tiktok-sample" href="https://www.tiktok.com/@vhsportofficial/video/7413725763498724615" target="_blank" rel="noreferrer">
+                  <figure>
+                    <img src="assets/vh-tiktok-sonic-speed.svg" alt="VH Sport SONIC collection speed-themed TikTok video">
+                    <span class="tiktok-play" aria-hidden="true">▶</span>
+                  </figure>
+                  <div class="sport-sample-caption">
+                    <div><span>TikTok · Product storytelling</span><strong>SONIC: Built for Speed</strong><p>I developed the TikTok hook around speed to give viewers scrolling through their feed one clear idea.</p></div>
                     <b>Watch video ↗</b>
                   </div>
                 </a>
