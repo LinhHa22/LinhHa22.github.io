@@ -260,7 +260,7 @@
     .insight-body { display: flex; flex: 1; flex-direction: column; padding: clamp(28px, 4vw, 42px); }
     .insight-body .eyebrow { color: var(--blue); }
     .insight-body h4 { margin: 0 0 15px; font-size: clamp(1.8rem, 3vw, 2.65rem); letter-spacing: -.05em; line-height: .98; }
-    .insight-body > p { color: var(--muted); font-size: .84rem; }
+    .insight-body > p, .channel-comparison > p { color: var(--muted); font-size: .84rem; }
     .insight-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 16px 0 24px; }
     .insight-metrics.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .insight-metrics div { padding-top: 15px; border-top: 1px solid var(--line); }
@@ -269,9 +269,7 @@
     .insight-posm { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); }
     .insight-posm > span { display: block; margin-bottom: 10px; color: var(--ink); font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     .channel-comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: 1.25rem; margin: 1.25rem 0; }
-    .channel-comparison > div { padding-top: .75rem; border-top: 1px solid var(--line); }
-    .channel-comparison a { color: var(--blue); font-weight: 700; text-decoration: underline; text-underline-offset: .18em; }
-    .channel-comparison p { margin: .5rem 0 0; font-size: .9rem; }
+    .channel-comparison > p { margin: 0; padding-top: .75rem; border-top: 1px solid var(--line); }
     .insight-links { display: flex; flex-wrap: wrap; gap: 7px; }
     .insight-links a { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--blue); font-size: .63rem; font-weight: 750; }
     .insight-links a:hover { border-color: var(--blue); background: var(--blue); color: white; }
@@ -586,19 +584,14 @@
                     <div><strong>80+</strong><span>industry leaders at launch</span></div>
                     <div><strong>3</strong><span>business interactions after promotion</span></div>
                   </div>
-                  <div class="channel-comparison" aria-label="EV report email and social examples">
-                    <div>
-                      <strong>Client email</strong>
-                      <p>For automotive clients, I introduced the research behind the report and explained why it mattered to businesses following Vietnam’s EV market.</p>
-                    </div>
-                    <div>
-                      <a href="https://www.facebook.com/100064332713122/posts/pfbid02MfguU3bdeqGsGLRswRrq4RTpFSbKj3SeBRXUwwGoJB1RbsWJUMjZkdFjM3gEBM85l/" target="_blank" rel="noreferrer">View the Facebook post</a>
-                      <p>On Facebook, I opened with a question about buying and selling EVs, then invited readers to the launch luncheon for early access to the findings.</p>
-                    </div>
+                  <div class="channel-comparison">
+                    <p>In the email to automotive clients, I introduced the research behind the report and explained why it mattered to businesses following Vietnam’s EV market.</p>
+                    <p>On Facebook, I opened with a question about buying and selling EVs, then invited readers to the launch luncheon for early access to the findings.</p>
                   </div>
                   <div class="insight-posm"><span>Launch assets</span><div class="insight-links">
                     <a href="https://kpmg.com/vn/en/home/insights/2024/07/the-ev-landscape-in-vietnam.html" target="_blank" rel="noreferrer">Website ↗</a>
                     <a href="https://drive.google.com/drive/folders/1kCCJFZzXprMDl7rnqYyfS2_zR5pGNHCG" target="_blank" rel="noreferrer">Email marketing ↗</a>
+                    <a href="https://www.facebook.com/100064332713122/posts/pfbid02MfguU3bdeqGsGLRswRrq4RTpFSbKj3SeBRXUwwGoJB1RbsWJUMjZkdFjM3gEBM85l/" target="_blank" rel="noreferrer">Facebook post ↗</a>
                     <a href="https://docs.google.com/document/d/1NRYWnOMaiYNWQcGQPP51H49A03NMixrz/edit" target="_blank" rel="noreferrer">Press release ↗</a>
                   </div></div>
                 </div>
