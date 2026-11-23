@@ -253,23 +253,23 @@
     .insight-card { display: flex; min-width: 0; overflow: hidden; flex-direction: column; border: 1px solid rgba(17, 26, 34, .14); border-radius: 21px; background: var(--paper-bright); }
     .insight-visual { display: grid; height: 365px; padding: 24px; place-items: center; overflow: hidden; }
     .insight-visual.make-difference { background: #c5d4f4; }
-    .insight-visual.ev-report { position: relative; container-type: size; padding: 0; }
     .insight-visual img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 20px 30px rgba(7, 18, 28, .16)); }
-    /* The Facebook post starts at (168, 136) and spans 485 × 842 pixels in the tablet screenshot. */
-    .ev-report-crop {
-      position: absolute;
-      top: 62%;
-      left: 50%;
-      width: max(100%, calc(100cqh * 485 / 842));
-      aspect-ratio: 485 / 842;
-      transform: translate(-50%, -62%);
-      overflow: hidden;
+    /* Match the frame to the full Facebook post inside the 800 × 1095 tablet screenshot. */
+    .insight-visual.ev-report {
+      position: relative;
+      align-self: start;
+      flex: none;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      aspect-ratio: 489 / 788;
+      padding: 0;
     }
     .insight-visual.ev-report img {
       position: absolute;
-      top: calc(-100% * 136 / 842);
-      left: calc(-100% * 168 / 485);
-      width: calc(100% * 800 / 485);
+      top: calc(-100% * 177 / 788);
+      left: calc(-100% * 166 / 489);
+      width: calc(100% * 800 / 489);
       max-width: none;
       height: auto;
       filter: none;
@@ -591,7 +591,7 @@
 
             <div class="insights-grid">
               <article class="insight-card">
-                <div class="insight-visual ev-report"><div class="ev-report-crop"><img src="assets/ev-report.webp" alt="KPMG Electric Vehicle Report 2024 launch social post"></div></div>
+                <div class="insight-visual ev-report"><img src="assets/ev-report.webp" alt="KPMG Vietnam’s Facebook invitation to the Driven by Voltage business luncheon for the 2024 Electric Vehicle Report launch"></div>
                 <div class="insight-body" id="ev-report">
                   <p class="eyebrow">Thought-leadership launch</p>
                   <h4>Electric Vehicle Report 2024</h4>
