@@ -371,11 +371,18 @@
     .tiktok-sample .sport-sample-caption b { margin-top: auto; }
 
     .expertise { background: var(--ink-deep); color: white; }
-    .expertise-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(70px, 10vw, 150px); }
+    .expertise-grid {
+      --expertise-gap: clamp(70px, 10vw, 150px);
+      --heading-column: calc((100cqi - var(--expertise-gap)) * .41);
+      container-type: inline-size;
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      gap: var(--expertise-gap);
+    }
     .expertise-heading { position: sticky; top: 120px; align-self: start; }
     .expertise-heading h2,
     .expertise-list h3 {
-      font-size: clamp(1.8rem, 2.7vw, 2.65rem);
+      font-size: min(clamp(2.65rem, 5vw, 5.25rem), calc(var(--heading-column) * .13));
       overflow-wrap: anywhere;
     }
     .expertise-heading p:last-child { max-width: 500px; color: rgba(255, 255, 255, .58); }
@@ -462,6 +469,7 @@
       .sport-sample figure { height: 360px; }
       .tiktok-samples { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .tiktok-sample figure { height: auto; }
+      .expertise-grid { --heading-column: 100cqi; }
       .expertise-heading { position: static; }
       .contact-grid { align-items: start; }
       .contact-actions { width: min(100%, 280px); }
@@ -519,6 +527,10 @@
       .timeline article { grid-template-columns: 1fr; gap: 8px; }
       .education-strip, .footer-grid { grid-template-columns: 1fr; }
       .footer-links { flex-wrap: wrap; }
+    }
+
+    @media (max-width: 440px) {
+      .expertise-list article { grid-template-columns: minmax(0, 1fr); gap: 8px; }
     }
 
     @media print {
