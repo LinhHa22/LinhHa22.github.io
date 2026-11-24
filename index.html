@@ -372,16 +372,17 @@
 
     .expertise { background: var(--ink-deep); color: white; }
     .expertise-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(70px, 10vw, 150px); }
-    .expertise-heading { position: sticky; top: 120px; align-self: start; container-type: inline-size; }
-    .expertise-heading h2 {
-      font-size: min(clamp(2.65rem, 5vw, 5.25rem), 13cqi);
+    .expertise-heading { position: sticky; top: 120px; align-self: start; }
+    .expertise-heading h2,
+    .expertise-list h3 {
+      font-size: clamp(1.8rem, 2.7vw, 2.65rem);
       overflow-wrap: anywhere;
     }
     .expertise-heading p:last-child { max-width: 500px; color: rgba(255, 255, 255, .58); }
     .expertise-list article { display: grid; grid-template-columns: 76px 1fr; gap: 24px; padding: 33px 0 39px; border-top: 1px solid rgba(255, 255, 255, .16); }
     .expertise-list article:last-child { border-bottom: 1px solid rgba(255, 255, 255, .16); }
     .expertise-list article > span { color: #91a9ff; font-size: 1.55rem; font-weight: 800; letter-spacing: -.05em; line-height: 1; }
-    .expertise-list h3 { margin-bottom: 9px; font-size: clamp(1.8rem, 2.7vw, 2.65rem); }
+    .expertise-list h3 { margin-bottom: 9px; }
     .expertise-list p { max-width: 570px; margin: 0; color: rgba(255, 255, 255, .58); }
 
     .projects { background: var(--blue-pale); }
